@@ -6707,7 +6707,7 @@ Tabs.Ok:AddButton({
 	Title = "Be Pirate", 
 	Description = "",
 	Callback = function()
-        FireRemote("SetTeam", "Pirates")
+        function() FireRemote("SetTeam", "Pirates")
 
 
 	
