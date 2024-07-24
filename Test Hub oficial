@@ -6714,7 +6714,7 @@ Tabs.Ok:AddParagraph({
 
 Tabs.Ok:AddTextBox({
     Title = "Input Job Id",Default = "",PlaceholderText = "Job ID",Callback = function(Value)
-   ServerId = Value
+    ServerId = Value
     Content = ""
      
    end
