@@ -6701,15 +6701,16 @@ end
 
 	
     end
-})
-
+})  
 
 
 Tabs.Ok:AddButton({
-	Title = "Be Pirate", 
+	Title = "Touch here", 
 	Description = "",
 	Callback = function()
-	FireRemote("SetTeam", "Pirates")
-
+        FireRemote("SetTeam", "Pirates")
+	
     end
 })
+
+
