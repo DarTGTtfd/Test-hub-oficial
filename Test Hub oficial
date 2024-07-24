@@ -6707,8 +6707,7 @@ Tabs.Ok:AddButton({
 	Title = "Touch here", 
 	Description = "",
 	Callback = function()
-            getgenv().AutoClick = Value
-end, "Misc/AutoClick"})
+        FireRemote("SetTeam", "Pirates")
 
 	
     end
