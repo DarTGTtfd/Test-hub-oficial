@@ -6704,10 +6704,31 @@ end
 })  
 
 Tabs.Ok:AddButton({
-	Title = "Be Pirate", 
+	Title = "Rin Fruits", 
 	Description = "",
 	Callback = function()
-        function() FireRemote("SetTeam", "Pirates")
+         for _,Fruit in pairs(game:GetObjects("rbxassetid://14759368201")[1]:GetChildren()) do
+      Fruit.Parent = Map
+      Fruit:MoveTo(Player.Character.PrimaryPart.Position + Vector3.new(math.random(-50, 50), 80, math.random(-50, 50)))
+      Fruit:WaitForChild("Handle").Touched:Connect(function(part)
+        if part.Parent:FindFirstChild("Humanoid") then
+          Fruit.Parent = Players[part.Parent.Name].Backpack
+        end
+      end)
+      pcall(function()
+        Fruit.Fruit["AnimationController"]:LoadAnimation(Fruit.Fruit.Idle):Play()
+      end)
+    end
+  end})
+  Visual:AddButton({"Bring Fruits", function()
+    for _,Fruit in pairs(Map:GetChildren()) do
+      if Fruit:IsA("Tool") or Fruit.Name:find("Fruit") then
+        Fruit.Parent = Player.Backpack
+      end
+    end
+  end})
+end
+
 
 
 	
