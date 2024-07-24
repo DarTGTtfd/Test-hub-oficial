@@ -6703,30 +6703,14 @@ end
     end
 })  
 
-Tabs.Ok:AddParagraph({
-    Title = "Join server",
-    Content = ""
-   
-   end 
-
-})
-
-
-Tabs.Ok:AddTextBox({
-    Title = "Input Job Id",Default = "",PlaceholderText = "Job ID",Callback = function(Value)
-    local ServerId = ""
-    Content = ""
-     
-   end
-
-})
-
 Tabs.Ok:AddButton({
-	Title = "Teleport to Mirage", 
+	Title = "Be Pirate", 
 	Description = "",
 	Callback = function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/Webhook/main/BloxFruits.lua"))():Teleport(ServerId)
+        FireRemote("SetTeam", "Pirates")
 
+
+	
     end
 })
 
