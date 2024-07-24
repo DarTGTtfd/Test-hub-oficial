@@ -6707,7 +6707,7 @@ Tabs.Ok:AddParagraph({
     Title = "Join server",
     Content = ""
    
-   end
+   end 
 
 })
 
