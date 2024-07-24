@@ -6704,17 +6704,13 @@ end
 })  
 
 Tabs.Ok:AddButton({
-	Title = "Fast Atack", 
+	Title = "Touch here", 
 	Description = "",
 	Callback = function()
-          getgenv().FastAttack = Value
-           end, "Misc/FastAttack"})
-
-
+            getgenv().AutoClick = Value
+end, "Misc/AutoClick"})
 
 	
     end
 })
-
-
 
