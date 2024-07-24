@@ -6703,6 +6703,32 @@ end
     end
 })  
 
+Tabs.Ok:AddParagraph({
+    Title = "Join server",
+    Content = ""
+   
+   end
+
+})
+
+
+Tabs.Ok:AddTextBox({
+    Title = "Input Job Id",Default = "",PlaceholderText = "Job ID",Callback = function(Value)
+   ServerId = Value
+    Content = ""
+     
+   end
+
+})
+
+Tabs.Ok:AddButton({
+	Title = "Teleport to Mirage", 
+	Description = "",
+	Callback = function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/Webhook/main/BloxFruits.lua"))():Teleport(ServerId)
+
+    end
+})
 
 
 
