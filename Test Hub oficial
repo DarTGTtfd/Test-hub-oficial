@@ -6707,14 +6707,15 @@ end
 
 
  Tabs.Ok:AddLabel({
-        Title = "time",
-        Content = "Aimbot v1"
+        
         
         
     }) 
 
 
-  
+   Tabs.Ok:AddParagraph({
+        Title = "Aimb",
+        Content = "Aimbot v1"
 
 
 
