@@ -6,7 +6,7 @@ local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.
 --------------------------------------------------------------------------------------------------------------------------------------------
 local Window = Fluent:CreateWindow({
     Title = "Test Hub",
-    SubTitle = "by deary", 
+    SubTitle = "by deary1", 
     TabWidth = 160,   
     Size = UDim2.fromOffset(450, 300),
     Acrylic = true, -- The blur may be detectable, setting this to false disables blur entirely
@@ -6717,7 +6717,7 @@ game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySanguineArt
     })
 
 
-  local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Auto Pirate Raid [Beta]", Default = false })
+  local Toggle = Tabs.Ok:AddToggle("MyToggle", {Title = "Auto Pirate Raid [Beta]", Default = false })
 
     Toggle:OnChanged(function(Value)
         _G.AutoRaidPirate = Value
@@ -6760,186 +6760,10 @@ game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySanguineArt
     end)
 
 
- local Toggle = Tabs.Ok:AddToggle("MyToggle", {Title = "Auto Kill Rip Indra", Default = false })
 
-    Toggle:OnChanged(function(Value)
-        _G.RipIndraKill = Value
-		StopTween(_G.RipIndraKill)
-    end)
- 
- spawn(function()
-        pcall(function()
-            while wait() do
-                if _G.RipIndraKill and game.Players.LocalPlayer.Backpack:FindFirstChild("God's Chalice") and game.Players.LocalPlayer.Character:FindFirstChild("God's Chalice") then
-                    if game:GetService("Workspace").Enemies:FindFirstChild("rip_indra True Form") or game:GetService("Workspace").Enemies:FindFirstChild("rip_indra") then
-                        for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-                            if v.Name == ("rip_indra True Form" or v.Name == "rip_indra") and v.Humanoid.Health > 0 and v:IsA("Model") and v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") then
-                                repeat task.wait()
-                                    spawn(function()
-                                        AutoHaki()
-                                        EquipWeapon(_G.SelectWeapon)
-                                        v.HumanoidRootPart.CanCollide = false
-                                        v.HumanoidRootPart.Size = Vector3.new(50,50,50)
-                                        topos(v.HumanoidRootPart.CFrame * CFrame.new(PosX,PosY,PosZ))
-                                    end)
-                                until not _G.RipIndraKill or v.Humanoid.Health <= 0
-                            end
-                        end
-                    else
-                        topos(CFrame.new(-5344.822265625, 423.98541259766, -2725.0930175781))
-                    end
-                end
-            end
-        end)
-    end) 
 
-    spawn(function()
-        pcall(function()
-            if _G.RipIndraKill then
-                repeat wait()
-                    AutoActiveColorRip_Indra()
-                until not game:GetService("Workspace").Enemies:FindFirstChild("rip_indra True Form") or not game:GetService("Workspace").Enemies:FindFirstChild("rip_indra")
-            end
-        end)
-    end)
-    
-    local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Kill Dough King", Default = false })
 
-    Toggle:OnChanged(function(Value)
-        _G.Autodoughking = Value
-		StopTween(_G.Autodoughking)
-    end)
-    
-    spawn(function()
-        while wait() do
-            if  _G.Autodoughking and World3 then
-                spawn(function()
-                    if game:GetService("Workspace").Enemies:FindFirstChild("Dough King") then
-                        for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-                            if v.Name == "Dough King" then
-                                if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
-                                    repeat task.wait()
-                                        AutoHaki()
-                                        EquipWeapon(_G.SelectWeapon)
-                                        v.HumanoidRootPart.CanCollide = false
-                                        v.Humanoid.WalkSpeed = 0
-                                        v.HumanoidRootPart.Size = Vector3.new(50,50,50)
-                                        topos(v.HumanoidRootPart.CFrame * CFrame.new(PosX,PosY,PosZ))
-                                        sethiddenproperty(game.Players.LocalPlayer,"SimulationRadius",math.huge)
-                                    until not  _G.Autodoughking or not v.Parent or v.Humanoid.Health <= 0
-                                end
-                            end
-                        end
-                    else
-                    topos(CFrame.new(-2662.818603515625, 1062.3480224609375, -11853.6953125))
-                        if game:GetService("ReplicatedStorage"):FindFirstChild("Dough King") then
-                            topos(game:GetService("ReplicatedStorage"):FindFirstChild("Dough King").HumanoidRootPart.CFrame * CFrame.new(2,20,2))
-                        else
-                            if  _G.AutodoughkingHop then
-                                Hop()
-                            end
-                        end
-                    end
-                end)
-            end
-        end
-    end)
-
-  
-
-
-
-local Time = Tabs.Main:AddParagraph({
-        Title = "Time Zone",
-        Content = ""
-    })
-    
-    local function UpdateOS()
-        local date = os.date("*t")
-        local hour = (date.hour) % 24
-        local ampm = hour < 12 and "AM" or "PM"
-        local timezone = string.format("%02i:%02i:%02i %s", ((hour -1) % 12) + 1, date.min, date.sec, ampm)
-        local datetime = string.format("%02d/%02d/%04d", date.day, date.month, date.year)
-        local LocalizationService = game:GetService("LocalizationService")
-        local Players = game:GetService("Players")
-        local player = Players.LocalPlayer
-        local name = player.Name
-        local result, code = pcall(function()
-            return LocalizationService:GetCountryRegionForPlayerAsync(player)
-        end)
-        Time:SetDesc(datetime.." - "..timezone.." [ " .. code .. " ]")
-    end
-    spawn(function()
-        while true do
-            UpdateOS()
-            game:GetService("RunService").RenderStepped:Wait()
-        end
-    end)
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Auto Haki V2", Default = false })
+local Toggle = Tabs.Ok:AddToggle("MyToggle", {Title = "Auto Haki V2", Default = false })
 
     Toggle:OnChanged(function(Value)
         _G.AutoObservationHakiV2 = Value
