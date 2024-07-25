@@ -6301,7 +6301,7 @@ Tabs.Ok:AddButton({
  Tabs.Ok:AddParagraph({
         Title = "Aimbot",
         Content = "Aimbot v1"
-    }) 
+}) 
 
 
 Tabs.Race:AddButton({
@@ -6309,8 +6309,9 @@ Tabs.Race:AddButton({
         Description = "",
         Callback = function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyBoat","PirateBrigade")
-        end
-    })
+ 
+     end
+ })
 
 
   Tabs.Race:AddButton({
