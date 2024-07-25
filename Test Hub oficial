@@ -6708,21 +6708,8 @@ end
 
 
 
-Tabs.Ok:AddButton({
-	Title = "Auto Active Button Haki Color", 
-	Description = "",
-	Callback = function()
- 
 
-  
-
-
-	
-    end
-})
-
-
-  Tabs.:Main:AddLabel({
+  Tabs.Main:AddLabel({
       Title = "Time Server", 
       Description = "",
       Callback = function()
