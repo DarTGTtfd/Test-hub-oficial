@@ -6708,7 +6708,7 @@ end
 
 
 Tabs.Ok:AddButton({
-	Title = "Auto Kitsune Island", 
+	Title = "1", 
 	Description = "",
 	Callback = function()
          local Boat, InPanicMode, TeleportPos
