@@ -6927,4 +6927,22 @@ game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySanguineArt
 	end)
 
 
+local Toggle = Tabs.Ok:AddToggle("MyToggle", {Title = "Move Cam to Moon", Default = false })
+
+    Toggle:OnChanged(function(Value)
+        _G.AutoDooHee = Value
+        end)
+        
+        spawn(function()
+    while wait() do
+        pcall(function()
+            if _G.AutoDooHee then
+                local moonDir = game.Lighting:GetMoonDirection()
+                local lookAtPos = game.Workspace.CurrentCamera.CFrame.p + moonDir * 100
+                game.Workspace.CurrentCamera.CFrame = CFrame.lookAt(game.Workspace.CurrentCamera.CFrame.p, lookAtPos)
+            end
+        end)
+    end
+end)
+
 
