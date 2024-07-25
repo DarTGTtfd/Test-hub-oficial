@@ -6722,10 +6722,10 @@ Tabs.Ok:AddButton({
 })
 
 
-Time = Main.Main:AddLabel({
+  Tabs.:Main:AddLabel({
       Title = "Time Server", 
-	Description = "",
-	Callback = function()
+      Description = "",
+      Callback = function()
  
 function UpdateTime()
 local GameTime = math.floor(workspace.DistributedGameTime+0.5)
