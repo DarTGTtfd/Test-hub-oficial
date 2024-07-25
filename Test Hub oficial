@@ -6,7 +6,7 @@ local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.
 --------------------------------------------------------------------------------------------------------------------------------------------
 local Window = Fluent:CreateWindow({
     Title = "Test Hub",
-    SubTitle = "by de1", 
+    SubTitle = "by de221", 
     TabWidth = 160,   
     Size = UDim2.fromOffset(450, 300),
     Acrylic = true, -- The blur may be detectable, setting this to false disables blur entirely
@@ -6716,55 +6716,6 @@ game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySanguineArt
         end
     })
 
-
-  local Toggle = Tabs.Ok:AddToggle("MyToggle", {Title = "Auto Pirate Raid [Beta]", Default = false })
-
-    Toggle:OnChanged(function(Value)
-        _G.AutoRaidPirate = Value
-    StopTween(_G.AutoRaidPirate)
-    end)
-        
-        spawn(function()
-	while wait() do
-		if _G.AutoRaidPirate then
-			pcall(function()
-				local CFrameBoss = CFrame.new(-5496.17432, 313.768921, -2841.53027, 0.924894512, 7.37058015e-09, 0.380223751, 3.5881019e-08, 1, -1.06665446e-07, -0.380223751, 1.12297109e-07, 0.924894512)
-				if (CFrame.new(-5539.3115234375, 313.800537109375, -2972.372314453125).Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 500 then
-					for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-						if _G.AutoRaidPirate and v:FindFirstChild("HumanoidRootPart") and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
-							if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude < 2000 then
-								repeat wait()
-									AutoHaki()
-									EquipWeapon(_G.SelectWeapon)
-									Fastattack = true
-									MakoriGayMag = true
-									v.HumanoidRootPart.CanCollide = false
-									v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)
-									topos(v.HumanoidRootPart.CFrame * CFrame.new(PosX,PosY,PosZ))
-								until v.Humanoid.Health <= 0 or not v.Parent or _G.AutoRaidPirate == false
-								Fastattack = false
-								MakoriGayMag = false
-							end
-						end
-					end
-				else
-					if ((CFrameBoss).Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 1500 then
-						topos(CFrameBoss)
-					else
-						BTP(CFrameBoss)
-					end
-				end
-			end)
-		end
-	end
-    end)
-
-
-
-
-
- 
-
 Tabs.Ok:AddButton({
 	Title = "Look Moon",
 	Description = "",
@@ -6776,3 +6727,4 @@ Tabs.Ok:AddButton({
 
 
 
+   
