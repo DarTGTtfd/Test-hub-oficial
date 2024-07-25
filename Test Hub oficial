@@ -6,7 +6,7 @@ local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.
 --------------------------------------------------------------------------------------------------------------------------------------------
 local Window = Fluent:CreateWindow({
     Title = "Test Hub",
-    SubTitle = "by dearyG1to0", 
+    SubTitle = "by deary", 
     TabWidth = 160,   
     Size = UDim2.fromOffset(450, 300),
     Acrylic = true, -- The blur may be detectable, setting this to false disables blur entirely
@@ -6924,7 +6924,8 @@ game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySanguineArt
 	end)
 
 
- local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Auto Kill Rip Indra", Default = false })
+
+local Toggle = Tabs.Ok:AddToggle("MyToggle", {Title = "Auto Kill Rip Indra", Default = false })
 
     Toggle:OnChanged(function(Value)
         _G.RipIndraKill = Value
@@ -7009,7 +7010,10 @@ game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySanguineArt
         end
     end)
 
-  local Time = Tabs.Ok:AddParagraph({
+  
+
+
+local Time = Tabs.Main:AddParagraph({
         Title = "Time Zone",
         Content = ""
     })
