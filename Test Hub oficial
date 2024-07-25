@@ -6,7 +6,7 @@ local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.
 --------------------------------------------------------------------------------------------------------------------------------------------
 local Window = Fluent:CreateWindow({
     Title = "Test Hub",
-    SubTitle = "by dddd1", 
+    SubTitle = "by dd33dd1", 
     TabWidth = 160,   
     Size = UDim2.fromOffset(450, 300),
     Acrylic = true, -- The blur may be detectable, setting this to false disables blur entirely
@@ -6704,25 +6704,6 @@ end
 })
 	
    
-
-
-
-
-  Tabs.Shop:AddButton({
-        Title = "Buy Sanguine Art",
-        Description = "",
-        Callback = function()            
-game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySanguineArt")
-        end
-    })
-
-Tabs.Ok:AddButton({
-	Title = "Look Moon",
-	Description = "",
-	Callback = function()
-		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyBlackLeg")
-	end
-})
 
 
 local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Kill Sea Beast", Default = false })
