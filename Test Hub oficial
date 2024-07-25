@@ -6311,7 +6311,7 @@ Tabs.Race:AddButton({
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyBoat","PirateBrigade")
         end
     })
-end)
+
 
   Tabs.Race:AddButton({
         Title = "TP Top GreatTree",
