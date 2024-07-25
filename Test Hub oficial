@@ -6928,13 +6928,13 @@ game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySanguineArt
 
 
 Tabs.Ok:AddButton({
-	Title = "Look Mirage", 
+	Title = "Look Moon",
 	Description = "",
 	Callback = function()
-        
-
-    end
+		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyBlackLeg")
+	end
 })
+
 
 
 
