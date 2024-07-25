@@ -6702,15 +6702,10 @@ end
 
 
 	
-    end
-})  
+   
 
 
- Tabs.Ok:AddLabel({
-        
-        
-        
-    }) 
+
 
  Tabs.Ok:AddParagraph({
         Title = "Aimbot11",
