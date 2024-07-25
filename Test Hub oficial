@@ -6711,7 +6711,7 @@ Tabs.Ok:AddButton({
 	Title = "Auto Kitsune Island", 
 	Description = "",
 	Callback = function()
-         local KitsuneIsland = Map:FindFirstChild("KitsuneIsland")
+         
     
     if KitsuneIsland then
       local plrChar = Player.Character
