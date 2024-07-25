@@ -6711,9 +6711,7 @@ Tabs.Ok:AddButton({
 	Title = "Auto Kitsune Island", 
 	Description = "",
 	Callback = function()
-         
-    
-    if KitsuneIsland then
+      if KitsuneIsland then
       local plrChar = Player.Character
       local plrPP = plrChar and plrChar.PrimaryPart
       local plrH = plrChar and plrChar:FindFirstChild("Humanoid")
