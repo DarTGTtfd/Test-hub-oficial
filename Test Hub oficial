@@ -6709,9 +6709,19 @@ end
 
 
 Tabs.Ok:AddButton({
-	Title = "Touch here", 
+	Title = "Buy TTK", 
 	Description = "",
 	Callback = function()
+         Callback = function(Value)
+      getgenv().AutoTTK = Value
+      task.spawn(function()
+        while getgenv().AutoTTK do task.wait()
+          FireRemote("MysteriousMan", "1")
+          FireRemote("MysteriousMan", "2")
+        end
+      end)
+    end
+
 
 	
     end
