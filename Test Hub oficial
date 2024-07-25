@@ -6712,7 +6712,6 @@ Tabs.Ok:AddButton({
 	Title = "Auto Active Button Haki Color", 
 	Description = "",
 	Callback = function()
-         Callback = function(Value)
         while getgenv().RipIndraLegendaryHaki do task.wait()
         local plrChar = Player and Player.Character and Player.Character.PrimaryPart
         if (plrChar.Position - Vector3.new(-5415, 314, -2212)).Magnitude < 5 then
