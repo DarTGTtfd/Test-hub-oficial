@@ -6,7 +6,7 @@ local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.
 --------------------------------------------------------------------------------------------------------------------------------------------
 local Window = Fluent:CreateWindow({
     Title = "Test Hub",
-    SubTitle = "by df2", 
+    SubTitle = "by df222", 
     TabWidth = 160,   
     Size = UDim2.fromOffset(450, 300),
     Acrylic = true, -- The blur may be detectable, setting this to false disables blur entirely
@@ -6702,8 +6702,39 @@ end
 
   end
 })
+
+Tabs.Race V4:AddButton({
+        Title = "BuyBoat",
+        Description = "",
+        Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyBoat","PirateBrigade")
+        end
+    })
+end)
+
+  Tabs.Race V4:AddButton({
+        Title = "TP Top GreatTree",
+        Description = "",
+        Callback = function()            
+             Game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(28286.35546875, 14895.3017578125, 102.62469482421875)
+        end
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	
-local Toggle = Tabs.Ok:AddToggle("MyToggle", {Title = "Kill Player When Trial Complete [Spam Skill]", Default = false })
+local Toggle = Tabs.Race V4:AddToggle("MyToggle", {Title = "Kill Player When Trial Complete [Spam Skill]", Default = false })
 
     Toggle:OnChanged(function(Value)
         KillPlayerSpam = Value
@@ -6748,20 +6779,4 @@ spawn(function()
         end)
     end
 
-Tabs.Ok:AddButton({
-        Title = "BuyBoat",
-        Description = "",
-        Callback = function()
-        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyBoat","PirateBrigade")
-        end
-    })
-end)
-
-  Tabs.Ok:AddButton({
-        Title = "TP Top GreatTree",
-        Description = "",
-        Callback = function()            
-             Game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(28286.35546875, 14895.3017578125, 102.62469482421875)
-        end
-    })
 
