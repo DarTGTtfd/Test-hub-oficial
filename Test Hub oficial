@@ -6303,6 +6303,25 @@ Tabs.Ok:AddButton({
         Content = "Aimbot v1"
     }) 
 
+
+Tabs.Race:AddButton({
+        Title = "BuyBoat",
+        Description = "",
+        Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyBoat","PirateBrigade")
+        end
+    })
+end)
+
+  Tabs.Race:AddButton({
+        Title = "TP Top GreatTree",
+        Description = "",
+        Callback = function()            
+             Game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(28286.35546875, 14895.3017578125, 102.62469482421875)
+        end
+    })
+
+
 Tabs.Ok:AddButton({
 	Title = "Touch here", 
 	Description = "",
@@ -6703,38 +6722,8 @@ end
   end
 })
 
-Tabs.Race V4:AddButton({
-        Title = "BuyBoat",
-        Description = "",
-        Callback = function()
-        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyBoat","PirateBrigade")
-        end
-    })
-end)
-
-  Tabs.Race V4:AddButton({
-        Title = "TP Top GreatTree",
-        Description = "",
-        Callback = function()            
-             Game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(28286.35546875, 14895.3017578125, 102.62469482421875)
-        end
-    })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	
-local Toggle = Tabs.Race V4:AddToggle("MyToggle", {Title = "Kill Player When Trial Complete [Spam Skill]", Default = false })
+local Toggle = Tabs.Race:AddToggle("MyToggle", {Title = "Kill Player When Trial Complete [Spam Skill]", Default = false })
 
     Toggle:OnChanged(function(Value)
         KillPlayerSpam = Value
