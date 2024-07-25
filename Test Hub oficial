@@ -6706,9 +6706,10 @@ end
 })  
 
 
-Time = Main:AddLabel("Server Time")
-
-function UpdateTime()
+ Tabs.Ok:AddParagraph({
+        Title = "time",
+        Content = "Aimbot v1"
+        function UpdateTime()
 local GameTime = math.floor(workspace.DistributedGameTime+0.5)
 local Hour = math.floor(GameTime/(60^2))%24
 local Minute = math.floor(GameTime/(60^1))%60
@@ -6723,6 +6724,8 @@ UpdateTime()
 end)
 end
 end)
+        
+    }) 
 
 
   
