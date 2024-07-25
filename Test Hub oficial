@@ -6708,10 +6708,13 @@ end
 
 
 
- Tabs.Ok:AddLabe("Server Time")l
-      
-    }) 
-
+  Tabs.Shop:AddButton({
+        Title = "Mua Sanguine Art",
+        Description = "",
+        Callback = function()            
+game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySanguineArt")
+        end
+    })
 
 
 
