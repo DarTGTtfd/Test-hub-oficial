@@ -6712,12 +6712,10 @@ end
         
     }) 
 
-
-   Tabs.Ok:AddParagraph({
-        Title = "Aimb",
+ Tabs.Ok:AddParagraph({
+        Title = "Aimbot11",
         Content = "Aimbot v1"
-
-
+    }) 
 
 
 
