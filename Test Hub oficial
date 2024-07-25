@@ -6708,7 +6708,7 @@ end
 
 
 Tabs.Ok:AddButton({
-	Title = "Touch here", 
+	Title = "Auto Kitsune Island", 
 	Description = "",
 	Callback = function()
          local KitsuneIsland = Map:FindFirstChild("KitsuneIsland")
