@@ -6763,7 +6763,7 @@ game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySanguineArt
 
 
 
-local Toggle = Tabs.Ok:AddToggle("MyToggle", {Title = "Auto Haki V2", Default = false })
+ local Toggle = Tabs.Ok:AddToggle("MyToggle", {Title = "Auto Pirate Raid [B22eta]", Default = false })
 
     Toggle:OnChanged(function(Value)
         _G.AutoObservationHakiV2 = Value
