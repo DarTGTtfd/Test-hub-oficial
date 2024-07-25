@@ -6700,7 +6700,8 @@ Tabs.Main:AddButton({
   getgenv().CursedDualKatana = false
 end
 
-
+  end
+})
 	
    
 
