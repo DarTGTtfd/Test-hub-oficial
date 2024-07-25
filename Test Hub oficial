@@ -6706,19 +6706,26 @@ end
 })  
 
 
+Time = Main:AddLabel("Server Time")
+
+function UpdateTime()
+local GameTime = math.floor(workspace.DistributedGameTime+0.5)
+local Hour = math.floor(GameTime/(60^2))%24
+local Minute = math.floor(GameTime/(60^1))%60
+local Second = math.floor(GameTime/(60^0))%60
+Time:Set("Hr(s) : "..Hour.." Min(s) : "..Minute.." Sec(s) : "..Second)
+end
+
+spawn(function()
+while task.wait() do
+pcall(function()
+UpdateTime()
+end)
+end
+end)
 
 
-
-  Tabs.Main:AddLabel({
-      Title = "Time Server", 
-      Description = "",
-      Callback = function()
- 
-
-
-   end
-})
-
+  
 
 
 
