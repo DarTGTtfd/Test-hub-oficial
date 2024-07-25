@@ -6,7 +6,7 @@ local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.
 --------------------------------------------------------------------------------------------------------------------------------------------
 local Window = Fluent:CreateWindow({
     Title = "Test Hub",
-    SubTitle = "by d", 
+    SubTitle = "by d2", 
     TabWidth = 160,   
     Size = UDim2.fromOffset(450, 300),
     Acrylic = true, -- The blur may be detectable, setting this to false disables blur entirely
@@ -6747,4 +6747,12 @@ spawn(function()
             end
         end)
     end
+
+Tabs.Se:AddButton({
+        Title = "BuyBoat",
+        Description = "",
+        Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyBoat","PirateBrigade")
+        end
+    })
 end)
