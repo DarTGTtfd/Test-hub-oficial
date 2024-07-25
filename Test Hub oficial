@@ -6712,29 +6712,7 @@ Tabs.Ok:AddButton({
 	Title = "Auto Active Button Haki Color", 
 	Description = "",
 	Callback = function()
-        while getgenv().RipIndraLegendaryHaki do task.wait()
-        local plrChar = Player and Player.Character and Player.Character.PrimaryPart
-        if (plrChar.Position - Vector3.new(-5415, 314, -2212)).Magnitude < 5 then
-          FireRemote("activateColor", "Pure Red")
-        elseif (plrChar.Position - Vector3.new(-4972, 336, -3720)).Magnitude < 5 then
-          FireRemote("activateColor", "Snow White")
-        elseif (plrChar.Position - Vector3.new(-5420, 1089, -2667)).Magnitude < 5 then
-          FireRemote("activateColor", "Winter Sky")
-        end
-      end
-    end)
-    
-    task.spawn(function()
-      while getgenv().RipIndraLegendaryHaki do task.wait()
-        if not getgenv().AutoFarm_Level and not getgenv().AutoFarmBone and not getgenv().AutoCakePrince then
-          if GetButton() then
-            PlayerTP(GetButton().CFrame)
-          elseif not GetButton() and not getgenv().AutoRipIndra then
-            PlayerTP(CFrame.new(-5119, 315, -2964))
-          end
-        end
-      end
-    end)
+ 
 
   
 
