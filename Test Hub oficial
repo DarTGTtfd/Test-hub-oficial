@@ -6708,9 +6708,8 @@ end
 
 
 
- Tabs.Ok:AddParagraph({
-        Title = "Aimbot11",
-        Content = "Aimbot v1"
+ Tabs.Ok:AddLabe("Server Time")l
+      
     }) 
 
 
