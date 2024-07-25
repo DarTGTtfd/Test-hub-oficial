@@ -6,7 +6,7 @@ local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.
 --------------------------------------------------------------------------------------------------------------------------------------------
 local Window = Fluent:CreateWindow({
     Title = "Test Hub",
-    SubTitle = "by dd33dd1", 
+    SubTitle = "by d", 
     TabWidth = 160,   
     Size = UDim2.fromOffset(450, 300),
     Acrylic = true, -- The blur may be detectable, setting this to false disables blur entirely
@@ -6703,102 +6703,6 @@ end
   end
 })
 	
-   
-
-
-local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Kill Sea Beast", Default = false })
-
-    Toggle:OnChanged(function(Value)
-        _G.SeaBeasts1 = Value
-		StopTween(_G.SeaBeasts1)
-    end)
-    
-    local gg = getrawmetatable(game)
-local old = gg.__namecall
-setreadonly(gg,false)
-gg.__namecall = newcclosure(function(...)
-    local method = getnamecallmethod()
-    local args = {...}
-    if tostring(method) == "FireServer" then
-        if tostring(args[1]) == "RemoteEvent" then
-            if tostring(args[2]) ~= "true" and tostring(args[2]) ~= "false" then
-                if Skillaimbot then
-                    args[2] = AimBotSkillPosition
-                    return old(unpack(args))
-                end
-            end
-        end
-    end
-    return old(...)
-end)
-
-spawn(function()
-    while wait() do
-		pcall(function()
-			if AutoSkill then
-				game:GetService("VirtualInputManager"):SendKeyEvent(true,"Z",false,game)
-				wait(0.1)
-                game:GetService("VirtualInputManager"):SendKeyEvent(false,"Z",false,game)
-                wait(0.1)
-                game:GetService("VirtualInputManager"):SendKeyEvent(true,"X",false,game)
-				wait(0.1)
-                game:GetService("VirtualInputManager"):SendKeyEvent(false,"X",false,game)
-                wait(0.1)
-                game:GetService("VirtualInputManager"):SendKeyEvent(true,"C",false,game)
-				wait(0.1)
-                game:GetService("VirtualInputManager"):SendKeyEvent(false,"C",false,game)
-                wait(0.1)
-                game:GetService("VirtualInputManager"):SendKeyEvent(true,"V",false,game)
-				wait(0.1)
-                game:GetService("VirtualInputManager"):SendKeyEvent(false,"V",false,game)
-			end
-		end)
-    end
-    end)
-    
-    spawn(function()
-        while wait() do
-            if _G.SeaBeasts1 then
-                pcall(function()  
-                      if game:GetService("Workspace").Enemies:FindFirstChild("Shark") or game:GetService("Workspace").Enemies:FindFirstChild("Piranha") or game:GetService("Workspace").Enemies:FindFirstChild("Fish Crew Member") or game:GetService("Workspace").Enemies:FindFirstChild("Terrorshark") or game:GetService("Workspace").SeaBeasts:FindFirstChild("SeaBeast1") or game:GetService("Workspace").Enemies:FindFirstChild("PirateBrigade") or game:GetService("Workspace").Enemies:FindFirstChild("PirateBasic") then
-                    for i,v in pairs(game:GetService("Workspace").SeaBeasts:GetChildren()) do
-						if v:FindFirstChild("HumanoidRootPart") then
-                            repeat wait()                
-					        AutoHaki()
-					        TP1(v.HumanoidRootPart.CFrame * CFrame.new(1,PosC,45))
-					        EquipAllWeapon()  
-					        game.Players.LocalPlayer.Character.Humanoid.Sit = false
-                            AutoSkill = true
-                            AimBotSkillPosition = v.HumanoidRootPart
-                            Skillaimbot = true
-                            until not _G.SeaBeasts1 or not v:FindFirstChild("HumanoidRootPart") 
-                            AutoSkill = false
-                            Skillaimbot = false                            
-                        end
-                    end
-                    else
-                            topos(game:GetService("Workspace").Boats.PirateBrigade.VehicleSeat.CFrame * CFrame.new(0, -1, 0))
-                    end
-                end)
-            end
-        end
-    end)
-
-
- local Toggle = Tabs.Ok:AddToggle("MyToggle", {Title = "Buye Boat + Zone 5", Default = false })
-
-    Toggle:OnChanged(function(state)
-        _G.dao = state
-    end)
-    
-    local Toggle = Tabs.Ok:AddToggle("MyToggle", {Title = "Speed Boat", Default = true })
-
-    Toggle:OnChanged(function(Value)
-        _G.Speed = Value
-    end)
-
-
-
 local Toggle = Tabs.Ok:AddToggle("MyToggle", {Title = "Kill Player When Trial Complete [Spam Skill]", Default = false })
 
     Toggle:OnChanged(function(Value)
