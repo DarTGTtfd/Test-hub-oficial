@@ -6880,7 +6880,7 @@ end
 })
 
 	
-   local Toggle = Tabs.Ms:AddToggle("MyToggle", {Title = "Kill Dough King", Default = false })
+   local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Kill Dough King", Default = false })
 
     Toggle:OnChanged(function(Value)
         _G.Autodoughking = Value
