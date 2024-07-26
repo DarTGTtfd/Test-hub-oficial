@@ -6464,32 +6464,7 @@ end)
     end)
 end) 
 
-  local Time = Tabs.Main:AddParagraph({
-        Title = "Time Zone",
-        Content = ""
-    })
-    
-    local function UpdateOS()
-        local date = os.date("*t")
-        local hour = (date.hour) % 24
-        local ampm = hour < 12 and "AM" or "PM"
-        local timezone = string.format("%02i:%02i:%02i %s", ((hour -1) % 12) + 1, date.min, date.sec, ampm)
-        local datetime = string.format("%02d/%02d/%04d", date.day, date.month, date.year)
-        local LocalizationService = game:GetService("LocalizationService")
-        local Players = game:GetService("Players")
-        local player = Players.LocalPlayer
-        local name = player.Name
-        local result, code = pcall(function()
-            return LocalizationService:GetCountryRegionForPlayerAsync(player)
-        end)
-        Time:SetDesc(datetime.." - "..timezone.." [ " .. code .. " ]")
-    end
-    spawn(function()
-        while true do
-            UpdateOS()
-            game:GetService("RunService").RenderStepped:Wait()
-        end
-    end)
+
     
     local Timekl = Tabs.Main:AddParagraph({
         Title = "Time Sever",
@@ -6511,6 +6486,8 @@ spawn(function()
   end)
  end
  end)
+
+
 
 Tabs.Main:AddButton({
 	Title = "Auto cdk", 
