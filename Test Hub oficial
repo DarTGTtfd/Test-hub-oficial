@@ -6503,7 +6503,7 @@ Tabs.Ok:AddButton({
 	Title = "Go Marine", 
 	Description = "",
 	Callback = function()
-         local args = {
+        local args = {
     [1] = "SetTeam",
     [2] = "Marines"
   }
@@ -6513,7 +6513,7 @@ Tabs.Ok:AddButton({
   }
   game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
 	
-    end
+ end
 })
 
 
