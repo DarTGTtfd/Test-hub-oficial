@@ -5,8 +5,8 @@ local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/d
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 --------------------------------------------------------------------------------------------------------------------------------------------
 local Window = Fluent:CreateWindow({
-    Title = "2",
-    SubTitle = "1", 
+    Title = "11",
+    SubTitle = "111", 
     TabWidth = 160,   
     Size = UDim2.fromOffset(450, 300),
     Acrylic = true, -- The blur may be detectable, setting this to false disables blur entirely
@@ -6496,6 +6496,24 @@ Tabs.Ok:AddButton({
   game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
 
  end
+})
+
+
+Tabs.Ok:AddButton({
+	Title = "Go Marine", 
+	Description = "",
+	Callback = function()
+         local args = {
+    [1] = "SetTeam",
+    [2] = "Marines"
+  }
+  game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+  local args = {
+    [1] = "BartiloQuestProgress"
+  }
+  game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+	
+    end
 })
 
 
