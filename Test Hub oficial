@@ -6485,120 +6485,12 @@ Tabs.Ok:AddButton({
 	Title = "ok", 
 	Description = "",
 	Callback = function()
-         spawn(function()
-        while wait() do
-            pcall(function()
-                if string.len(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CakePrinceSpawner")) == 88 then
-                    KillMob = (tonumber(string.sub(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CakePrinceSpawner"),39,41)) - 500)
-                elseif string.len(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CakePrinceSpawner")) == 87 then
-                    KillMob = (tonumber(string.sub(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CakePrinceSpawner"),40,41)) - 500)
-                elseif string.len(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CakePrinceSpawner")) == 86 then
-                    KillMob = (tonumber(string.sub(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CakePrinceSpawner"),41,41)) - 500)
-                end
-            end)
-        end
-    end)
-    
-    local CakePos = CFrame.new(-2091.911865234375, 70.00884246826172, -12142.8359375)
-    spawn(function()
-        while wait() do
-            if CakeFMode == "NoQuest" and _G.AutoDoughtBoss then
-                pcall(function()
-                    if game:GetService("Workspace").Enemies:FindFirstChild("Cake Prince") then
-                        for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-                            if v.Name == "Cake Prince" then
-                                if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
-                                    repeat task.wait()
-                                        AutoHaki()
-                                        EquipWeapon(_G.SelectWeapon)
-                                        v.HumanoidRootPart.CanCollide = false
-                                        v.Humanoid.WalkSpeed = 0
-                                        v.HumanoidRootPart.Size = Vector3.new(50,50,50)
-                                        topos(v.HumanoidRootPart.CFrame * Pos)
-                                        game:GetService("VirtualUser"):CaptureController()
-                                        game:GetService("VirtualUser"):Button1Down(Vector2.new(1280,672))
-                                        sethiddenproperty(game.Players.LocalPlayer,"SimulationRadius",math.huge)
-                                    until not _G.AutoDoughtBoss or not v.Parent or v.Humanoid.Health <= 0
-                                end
-                            end
-                        end
-                    else
-                        if game:GetService("ReplicatedStorage"):FindFirstChild("Cake Prince [Lv. 2300] [Raid Boss]") then
-                            topos(game:GetService("ReplicatedStorage"):FindFirstChild("Cake Prince [Lv. 2300] [Raid Boss]").HumanoidRootPart.CFrame * CFrame.new(2,20,2))
-                        else
-                            if KillMob == 0 then
-                            end                    
-                            if game:GetService("Workspace").Map.CakeLoaf.BigMirror.Other.Transparency == 1 then
-                                if game:GetService("Workspace").Enemies:FindFirstChild("Cookie Crafter") or game:GetService("Workspace").Enemies:FindFirstChild("Cake Guard") or game:GetService("Workspace").Enemies:FindFirstChild("Baking Staff") or game:GetService("Workspace").Enemies:FindFirstChild("Head Baker") then
-                                    for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-                                        if v.Name == "Cookie Crafter" or v.Name == "Cake Guard" or v.Name == "Baking Staff" or v.Name == "Head Baker" then
-                                            if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
-                                                repeat task.wait()
-                                                    AutoHaki()
-                                                    EquipWeapon(_G.SelectWeapon)
-                                                    v.HumanoidRootPart.CanCollide = false
-                                                    v.Humanoid.WalkSpeed = 0
-                                                    v.Head.CanCollide = false 
-                                                    v.HumanoidRootPart.Size = Vector3.new(50,50,50)
-                                                    MagnetDought = true
-                                                    PosMonDoughtOpenDoor = v.HumanoidRootPart.CFrame
-                                                    topos(v.HumanoidRootPart.CFrame * Pos)
-                                                    game:GetService("VirtualUser"):CaptureController()
-                                                    game:GetService("VirtualUser"):Button1Down(Vector2.new(1280,672))
-                                                until not _G.AutoDoughtBoss or not v.Parent or v.Humanoid.Health <= 0 or game:GetService("Workspace").Map.CakeLoaf.BigMirror.Other.Transparency == 0 or game:GetService("ReplicatedStorage"):FindFirstChild("Cake Prince [Lv. 2300] [Raid Boss]") or game:GetService("Workspace").Enemies:FindFirstChild("Cake Prince [Lv. 2300] [Raid Boss]") or KillMob == 0
-                                            end
-                                        end
-                                    end
-                                else
-                                if BypassTP then
-                                if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CakePos.Position).Magnitude > 1500 then
-						        BTP(CakePos)
-						        elseif (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - CakePos.Position).Magnitude < 1500 then
-						        topos(CakePos)
-						        end
-					        else
-						        topos(CakePos)
-					        end
-                                    MagnetDought = false
-                                    UnEquipWeapon(_G.SelectWeapon)
-                                    topos(CFrame.new(-2091.911865234375, 70.00884246826172, -12142.8359375))
-                                    if game:GetService("ReplicatedStorage"):FindFirstChild("Cookie Crafter") then
-                                        topos(game:GetService("ReplicatedStorage"):FindFirstChild("Cookie Crafter").HumanoidRootPart.CFrame * CFrame.new(2,20,2)) 
-                                    else
-                                        if game:GetService("ReplicatedStorage"):FindFirstChild("Cake Guard") then
-                                            topos(game:GetService("ReplicatedStorage"):FindFirstChild("Cake Guard").HumanoidRootPart.CFrame * CFrame.new(2,20,2)) 
-                                        else
-                                            if game:GetService("ReplicatedStorage"):FindFirstChild("Baking Staff") then
-                                                topos(game:GetService("ReplicatedStorage"):FindFirstChild("Baking Staff").HumanoidRootPart.CFrame * CFrame.new(2,20,2))
-                                            else
-                                                if game:GetService("ReplicatedStorage"):FindFirstChild("Head Baker") then
-                                                    topos(game:GetService("ReplicatedStorage"):FindFirstChild("Head Baker").HumanoidRootPart.CFrame * CFrame.new(2,20,2))
-                                                end
-                                            end
-                                        end
-                                    end                       
-                                end
-                            else
-                                if game:GetService("Workspace").Enemies:FindFirstChild("Cake Prince") then
-                                    topos(game:GetService("Workspace").Enemies:FindFirstChild("Cake Prince").HumanoidRootPart.CFrame * CFrame.new(2,20,2))
-                                else
-                                    if game:GetService("ReplicatedStorage"):FindFirstChild("Cake Prince") then
-                                        topos(game:GetService("ReplicatedStorage"):FindFirstChild("Cake Prince").HumanoidRootPart.CFrame * CFrame.new(2,20,2))
-                                    end
-                                end
-                            end
-                        end
-                    end
-                end)
-            end
-        end
-    end)    
-    
-    local CakeQuestPos = CFrame.new(-2021.32007, 37.7982254, -12028.7295, 0.957576931, -8.80302053e-08, 0.288177818, 6.9301187e-08, 1, 7.51931211e-08, -0.288177818, -5.2032135e-08, 0.957576931)
-      
-spawn(function()
-        while wait() do
-
+        game.StarterGui:SetCore("SendNotification", {
+Title = "Le Huy",
+Text = "HyB Community",
+Duration = 15,
+})
+local Players = game:service("Players") local Player = Players.LocalPlayer local Mouse = Player:GetMouse() local Camera = game:service("Workspace").CurrentCamera local RS = game:service("RunService") local UIS = game:service("UserInputService") repeat wait() until Player.Character ~= nil and Player.Character.PrimaryPart ~= nil local LerpColorModule = loadstring(game:HttpGet("https://pastebin.com/raw/wRnsJeid"))() local HealthBarLerp = LerpColorModule:Lerp(Color3.fromRGB(255, 0, 0), Color3.fromRGB(0, 255, 0)) local function NewCircle(Transparency, Color, Radius, Filled, Thickness) local c = Drawing.new("Circle") c.Transparency = Transparency c.Color = Color c.Visible = false c.Thickness = Thickness c.Position = Vector2.new(0, 0) c.Radius = Radius c.NumSides = math.clamp(Radius*55/100, 10, 75) c.Filled = Filled return c end local RadarInfo = { Position = Vector2.new(200, 200), Radius = 100, Scale = 1, -- Determinant factor on the effect of the relative position for the 2D integration RadarBack = Color3.fromRGB(10, 10, 10), RadarBorder = Color3.fromRGB(75, 75, 75), LocalPlayerDot = Color3.fromRGB(255, 255, 255), PlayerDot = Color3.fromRGB(60, 170, 255), Team = Color3.fromRGB(0, 255, 0), Enemy = Color3.fromRGB(255, 0, 0), Health_Color = true, Team_Check = true } local RadarBackground = NewCircle(0.9, RadarInfo.RadarBack, RadarInfo.Radius, true, 1) RadarBackground.Visible = true RadarBackground.Position = RadarInfo.Position local RadarBorder = NewCircle(0.75, RadarInfo.RadarBorder, RadarInfo.Radius, false, 3) RadarBorder.Visible = true RadarBorder.Position = RadarInfo.Position local function GetRelative(pos) local char = Player.Character if char ~= nil and char.PrimaryPart ~= nil then local pmpart = char.PrimaryPart local camerapos = Vector3.new(Camera.CFrame.Position.X, pmpart.Position.Y, Camera.CFrame.Position.Z) local newcf = CFrame.new(pmpart.Position, camerapos) local r = newcf:PointToObjectSpace(pos) return r.X, r.Z else return 0, 0 end end local function PlaceDot(plr) local PlayerDot = NewCircle(1, RadarInfo.PlayerDot, 3, true, 1) local function Update() local c c = game:service("RunService").RenderStepped:Connect(function() local char = plr.Character if char and char:FindFirstChildOfClass("Humanoid") and char.PrimaryPart ~= nil and char:FindFirstChildOfClass("Humanoid").Health > 0 then local hum = char:FindFirstChildOfClass("Humanoid") local scale = RadarInfo.Scale local relx, rely = GetRelative(char.PrimaryPart.Position) local newpos = RadarInfo.Position - Vector2.new(relx * scale, rely * scale) if (newpos - RadarInfo.Position).magnitude < RadarInfo.Radius-2 then PlayerDot.Radius = 3 PlayerDot.Position = newpos PlayerDot.Visible = true else local dist = (RadarInfo.Position - newpos).magnitude local calc = (RadarInfo.Position - newpos).unit * (dist - RadarInfo.Radius) local inside = Vector2.new(newpos.X + calc.X, newpos.Y + calc.Y) PlayerDot.Radius = 2 PlayerDot.Position = inside PlayerDot.Visible = true end PlayerDot.Color = RadarInfo.PlayerDot if RadarInfo.Team_Check then if plr.TeamColor == Player.TeamColor then PlayerDot.Color = RadarInfo.Team else PlayerDot.Color = RadarInfo.Enemy end end if RadarInfo.Health_Color then PlayerDot.Color = HealthBarLerp(hum.Health / hum.MaxHealth) end else PlayerDot.Visible = false if Players:FindFirstChild(plr.Name) == nil then PlayerDot:Remove() c:Disconnect() end end end) end coroutine.wrap(Update)() end for _,v in pairs(Players:GetChildren()) do if v.Name ~= Player.Name then PlaceDot(v) end end local function NewLocalDot() local d = Drawing.new("Triangle") d.Visible = true d.Thickness = 1 d.Filled = true d.Color = RadarInfo.LocalPlayerDot d.PointA = RadarInfo.Position + Vector2.new(0, -6) d.PointB = RadarInfo.Position + Vector2.new(-3, 6) d.PointC = RadarInfo.Position + Vector2.new(3, 6) return d end local LocalPlayerDot = NewLocalDot() Players.PlayerAdded:Connect(function(v) if v
 	
     end
 })
