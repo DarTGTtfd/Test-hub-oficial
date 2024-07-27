@@ -31,7 +31,7 @@ local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.
 --------------------------------------------------------------------------------------------------------------------------------------------
 local Window = Fluent:CreateWindow({
     Title = "11",
-    SubTitle = "111", 
+    SubTitle = "222", 
     TabWidth = 160,   
     Size = UDim2.fromOffset(450, 300),
     Acrylic = true, -- The blur may be detectable, setting this to false disables blur entirely
@@ -6542,8 +6542,9 @@ Tabs.Ok:AddButton({
 })
 
 Tabs.Shop:AddButton({
-    Name = "Buy Ghoul Race :",
-    Callback = function()
+        Title = "Buy Ghoul Race", 
+	Description = "",
+	Callback = function()
         local a = {
             [1] = "Ectoplasm",
             [2] = "BuyCheck",
@@ -6560,8 +6561,9 @@ Tabs.Shop:AddButton({
 })
 
 Tabs.Shop:AddButton({
-    Name = "Buy Ghoul Race :",
-    Callback = function()
+        Title = "Buy Cybork race", 
+	Description = "",
+	Callback = function()
         local a = {
             [1] = "CyborgTrainer",
             [2] = "Buy"
@@ -6572,107 +6574,122 @@ Tabs.Shop:AddButton({
 
 
 Tabs.Shop:AddButton({
-    Name = "Cutlass Katana",
-    Callback = function()
+        Title = "Kutlass Katana", 
+	Description = "",
+	Callback = function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Cutlass")
       end    
 })
 
 Tabs.Shop:AddButton({
-    Name = "Katana",
-    Callback = function()
+        Title = "Katana", 
+	Description = "",
+	Callback = function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Katana")
       end    
 })
 
 Tabs.Shop:AddButton({
-    Name = "Iron Mace",
-    Callback = function()
+        Title = "Iron Mcae", 
+	Description = "",
+	Callback = function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Iron Mace")
       end    
 })
 
 Tabs.Shop:AddButton({
-    Name = "Dual Katana",
-    Callback = function()
+        Title = "Dual Katana", 
+	Description = "",
+	Callback = function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Duel Katana")
       end    
 })
 
 Tabs.Shop:AddButton({
-    Name = "Triple Katana",
-    Callback = function()
+        Title = "Triple katana", 
+	Description = "",
+	Callback = function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Triple Katana")
       end    
 })
 
 Tabs.Shop:AddButton({
-    Name = "Pipe",
-    Callback = function()
+        Title = "Pipe", 
+	Description = "",
+	Callback = function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Pipe")
       end    
 })
 
 Tabs.Shop:AddButton({
-    Name = "Dual-Headed Blade ",
-    Callback = function()
+        Title = "Dual Head Debate", 
+	Description = "",
+	Callback = function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Dual-Headed Blade")
       end    
 })
 
 Tabs.Shop:AddButton({
-    Name = "Bisento",
-    Callback = function()
+        Title = "Basiento", 
+	Description = "",
+	Callback = function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Bisento")
       end    
 })
 
 Tabs.Shop:AddButton({
-    Name = "Soul Cane",
-    Callback = function()
+        Title = "Soul Cane", 
+	Description = "",
+	Callback = function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Soul Cane")
       end    
 })
 
 Tabs.Shop:AddButton({
-    Name = "Pole v.2 [ 5,000 Fragments ]",
-    Callback = function()
+        Title = "Pole v2 5k frag", 
+	Description = "",
+	Callback = function()
         game.ReplicatedStorage.Remotes.CommF_:InvokeServer("ThunderGodTalk")
       end    
 })
 
 
 Tabs.Shop:AddButton({
-    Name = "Slingshot",
-    Callback = function()
+        Title = "Slinghsot", 
+	Description = "",
+	Callback = function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Slingshot")
       end    
 })
 
 Tabs.Shop:AddButton({
-    Name = "Musket",
-    Callback = function()
+        Title = "Muscket", 
+	Description = "",
+	Callback = function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Musket")
       end    
 })
 
 Tabs.Shop:AddButton({
-    Name = "Flintlock",
-    Callback = function()
+        Title = "Flinlock", 
+	Description = "",
+	Callback = function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Flintlock")
       end    
 })
 
 Tabs.Shop:AddButton({
-    Name = "Refined Slingshot",
-    Callback = function()
+        Title = "Reflined SlHINGHSIT", 
+	Description = "",
+	Callback = function()
           game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Refined Flintlock")
       end    
 })
 
 Tabs.Shop:AddButton({
-    Name = "Refined Flintlock",
-    Callback = function()
+        Title = "Refliend Antilok", 
+	Description = "",
+	Callback = function()
         local args = {
             [1] = "BuyItem",
             [2] = "Refined Flintlock"
@@ -6682,23 +6699,26 @@ Tabs.Shop:AddButton({
 })
 
 Tabs.Shop:AddButton({
-    Name = "Cannon",
-    Callback = function()
+        Title = "Cannon", 
+	Description = "",
+	Callback = function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Cannon")
       end    
 })
 
 Tabs.Shop:AddButton({
-    Name = "Kabucha [ 1,500 Fragments]",
-    Callback = function()
+        Title = "Kabucha", 
+	Description = "",
+	Callback = function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward","Slingshot","1")
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward","Slingshot","2")
       end    
 })
 
 Tabs.Shop:AddButton({
-    Name = "Bizarre Rifle [ 250 Ectoplasm ]",
-    Callback = function()
+        Title = "Blizare Rifle", 
+	Description = "",
+	Callback = function()
         local A_1 = "Ectoplasm"
         local A_2 = "Buy"
         local A_3 = 1
