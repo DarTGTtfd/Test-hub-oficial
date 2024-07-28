@@ -6732,131 +6732,74 @@ Tabs.Shop:AddButton({
       end    
 })
 
- Tabs.Ok:AddButton({
-	Title = "Bizarre Rifle [ 250 Ectoplasm ]", 
-	Description = "",
-	callback = function(value)
-			if value == false then
-				toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
-			end
-			SaveSettings()
 
-			task.spawn(function()
-				while wait() do
-						game.ReplicatedStorage.Remotes.CommF_:InvokeServer("CakePrinceSpawner")
-						if game.ReplicatedStorage:FindFirstChild("Cake Prince [Lv. 2300] [Raid Boss]") or game:GetService("Workspace").Enemies:FindFirstChild("Cake Prince [Lv. 2300] [Raid Boss]") then
-							if game:GetService("Workspace").Enemies:FindFirstChild("Cake Prince [Lv. 2300] [Raid Boss]") then
-								for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
-									if _G.Settings.Main["Auto Cake Prince"] and v.Name == "Cake Prince [Lv. 2300] [Raid Boss]" and v:FindFirstChild("HumanoidRootPart") and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
-										repeat wait()
-											if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude > 300 then
-												Farmtween = toTarget(v.HumanoidRootPart.CFrame)
-											elseif (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 300 then
-												if Farmtween then
-													Farmtween:Stop()
-												end
-												FastAttack = true
-												if _G.Settings.Configs["Auto Haki"] then
-													if not game.Players.LocalPlayer.Character:FindFirstChild("HasBuso") then
-														game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Buso")
-													end
-												end
-												if not game.Players.LocalPlayer.Character:FindFirstChild(_G.Settings.Configs["Select Weapon"]) then
-													wait()
-													EquipWeapon(_G.Settings.Configs["Select Weapon"])
-												end
-												PosMon = v.HumanoidRootPart.CFrame
-												if not _G.Settings.Configs["Fast Attack"] then
-													game:GetService'VirtualUser':CaptureController()
-													game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
-												end
-												v.HumanoidRootPart.Size = Vector3.new(60,60,60)
-												if _G.Settings.Configs["Show Hitbox"] then
-													v.HumanoidRootPart.Transparency = _G.Hitbox_LocalTransparency
-												else
-													v.HumanoidRootPart.Transparency = 1
-												end
-												v.Humanoid.JumpPower = 0
-												v.Humanoid.WalkSpeed = 0
-												v.HumanoidRootPart.CanCollide = false
-												v.Humanoid:ChangeState(11)
-												toTarget(v.HumanoidRootPart.CFrame * CFrame.new(0,_G.Settings.Configs["Distance Auto Farm"],0))
-											end
-										until not _G.Settings.Main["Auto Cake Prince"] or not v.Parent or v.Humanoid.Health <= 0
-										FastAttack = false
-									end
-								end
-							else
-								if game:GetService("Workspace").Map.CakeLoaf.BigMirror.Other.Transparency == 0 and (CFrame.new(-1990.672607421875, 4532.99951171875, -14973.6748046875).Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude >= 2000 then
-									FastAttack = false
-									Questtween = toTarget(CFrame.new(-2151.82153, 149.315704, -12404.9053))
-									if (CFrame.new(-2151.82153, 149.315704, -12404.9053).Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 300 then
-										if Questtween then Questtween:Stop() end
-										game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2151.82153, 149.315704, -12404.9053)
-										wait(.1)
-									end
-								end 
-							end
-						else
-							if game:GetService("Workspace").Enemies:FindFirstChild("Cookie Crafter [Lv. 2200]") or game:GetService("Workspace").Enemies:FindFirstChild("Cake Guard [Lv. 2225]") or game:GetService("Workspace").Enemies:FindFirstChild("Baking Staff [Lv. 2250]") or game:GetService("Workspace").Enemies:FindFirstChild("Head Baker [Lv. 2275]") then
-								for i,v in pairs(game.Workspace.Enemies:GetChildren()) do
-									if (v.Name == "Cookie Crafter [Lv. 2200]" or v.Name == "Cake Guard [Lv. 2225]" or v.Name == "Baking Staff [Lv. 2250]" or v.Name == "Head Baker [Lv. 2275]") and v:FindFirstChild("HumanoidRootPart") and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
-										repeat wait()
-											if (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude > 300 then
-												Farmtween = toTarget(v.HumanoidRootPart.CFrame)
-											elseif (v.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 300 then
-												if Farmtween then
-													Farmtween:Stop()
-												end
-												FastAttack = true
-												StartMagnet = true
-												if _G.Settings.Configs["Auto Haki"] then
-													if not game.Players.LocalPlayer.Character:FindFirstChild("HasBuso") then
-														game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Buso")
-													end
-												end
-												if not game.Players.LocalPlayer.Character:FindFirstChild(_G.Settings.Configs["Select Weapon"]) then
-													wait()
-													EquipWeapon(_G.Settings.Configs["Select Weapon"])
-												end
-												PosMon = v.HumanoidRootPart.CFrame
-												if not _G.Settings.Configs["Fast Attack"] then
-													game:GetService'VirtualUser':CaptureController()
-													game:GetService'VirtualUser':Button1Down(Vector2.new(1280, 672))
-												end
-												v.HumanoidRootPart.Size = Vector3.new(60,60,60)
-												if _G.Settings.Configs["Show Hitbox"] then
-													v.HumanoidRootPart.Transparency = _G.Hitbox_LocalTransparency
-												else
-													v.HumanoidRootPart.Transparency = 1
-												end
-												v.Humanoid.JumpPower = 0
-												v.Humanoid.WalkSpeed = 0
-												v.HumanoidRootPart.CanCollide = false
-												v.Humanoid:ChangeState(11)
-												toTarget(v.HumanoidRootPart.CFrame * CFrame.new(0,_G.Settings.Configs["Distance Auto Farm"],0))
-											end
-										until not _G.Settings.Main["Auto Cake Prince"] or not v.Parent or v.Humanoid.Health <= 0
-										StartMagnet = false
-										FastAttack = false
-									end
-								end
-							else
-								Questtween = toTarget(CFrame.new(-2077, 252, -12373))
-								if (CFrame.new(-2077, 252, -12373).Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 300 then
-									if Questtween then Questtween:Stop() end
-									game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2077, 252, -12373)
-								end
-							end
-						end
-					else
-						toTarget(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame)
-						break
-					end
-				end
-			end)
-	    end    
-   }) 
+local ToggleMirage = Tabs.Main:AddToggle({
+        Title = "Auto Summon mirage", 
+	Description = "",
+	Callback = function()
+    if state then
+        _G.dao = true
+    else
+        _G.dao = false
+    end
+
+
+if _G.dao then
+local args = {
+    [1] = "requestEntrance",
+    [2] = Vector3.new(-12463.6025390625, 378.3270568847656, -7566.0830078125)
+}
+game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+wait(1)
+BTPZ(CFrame.new(-5411.22021, 778.609863, -2682.27759, 0.927179396, 0, 0.374617696, 0, 1, 0, -0.374617696, 0, 0.927179396))
+
+local args = {
+    [1] = "BuyBoat",
+    [2] = "MarineBrigade"
+}
+game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+
+function two(gotoCFrame) --- Tween
+      pcall(function()
+          game.Players.LocalPlayer.Character.Humanoid.Sit = false
+          game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
+      end)
+      if (game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart.Position - gotoCFrame.Position).Magnitude <= 200 then
+          pcall(function() 
+              tweenz:Cancel()
+          end)
+          game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart.CFrame = gotoCFrame
+      else
+          local tween_s = game:service"TweenService"
+          local info = TweenInfo.new((game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart.Position - gotoCFrame.Position).Magnitude/325, Enum.EasingStyle.Linear)
+           tween, err = pcall(function()
+              tweenz = tween_s:Create(game.Players.LocalPlayer.Character["HumanoidRootPart"], info, {CFrame = gotoCFrame})
+              tweenz:Play()
+          end)
+          if not tween then return err end
+      end
+      function _TweenCanCle()
+          tweenz:Cancel()
+      end
+  
+end
+two(CFrame.new(-5100.7085, 29.968586, -6792.45459, -0.33648631, -0.0396691673, 0.940852463, -6.40461678e-07, 0.999112308, 0.0421253517, -0.941688359, 0.0141740013, -0.336187631))
+
+wait(13)
+for _,v in next, workspace.Boats.MarineBrigade:GetDescendants() do
+    if v.Name:find("VehicleSeat") then
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+     if game:GetService("Workspace").Map:FindFirstChild("MysticIsland") then
+                           Tween(game:GetService("Workspace").Map:FindFirstChild("MysticIsland").HumanoidRootPart.CFrame * CFrame.new(0,500,-100))
+   
+    end
+    end
+end
+end
+end) 
+
+ Options.ToggleMirage:SetValue(false)
+
 
 Tabs.Main:AddButton({
 	Title = "Auto cdk", 
