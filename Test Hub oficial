@@ -6483,6 +6483,33 @@ end)
 end) 
 
 
+  local FrozenIsland = Tabs.Ok:AddParagraph({
+        Title = "Players",
+        Content = ""
+    })
+     spawn(function()
+        while wait() do
+            pcall(function()
+                for i,v in pairs(game:GetService("Players"):GetPlayers()) do
+                    if i == 12 then
+                        plyserv:SetDesc("Players :".." "..i.." ".."/".." ".."12".." ".."(Max)")
+                    elseif i == 1 then
+                        plyserv:SetDesc("Player :".." "..i.." ".."/".." ".."12")
+                    else
+                        plyserv:SetDesc("Players :".." "..i.." ".."/".." ".."12")
+                    end
+                end
+            end)
+        end
+    end)
+    
+    Playerslist = {}
+    
+    for i,v in pairs(game:GetService("Players"):GetChildren()) do
+        table.insert(Playerslist,v.Name)
+    end
+
+
   local locallv = Tabs.Ok:AddParagraph({
         Title = "Level",
         Content = ""
