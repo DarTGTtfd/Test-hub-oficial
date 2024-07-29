@@ -6485,14 +6485,14 @@ end)
 
 
   local locallv = Tabs.Ok:AddParagraph({
-        Title = "Your Lv",
+        Title = "Level",
         Content = ""
     })
-    
+                                   
   spawn(function()
         while wait() do
             pcall(function()
-                locallv:Set("Level :".." "..game:GetService("Players").LocalPlayer.Data.Level.Value)
+                locallv:SetDesc("Level :".." "..game:GetService("Players").LocalPlayer.Data.Level.Value)
             end)
         end
     end) 
