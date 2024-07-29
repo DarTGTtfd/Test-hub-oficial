@@ -6483,31 +6483,18 @@ end)
 end) 
 
 
-  local FrozenIsland = Tabs.Ok:AddParagraph({
-        Title = "Players",
+ local ObservationRange = Tabs.Ok:AddParagraph({
+       Title = "Haki Exp",
         Content = ""
     })
-     spawn(function()
+    
+    spawn(function()
         while wait() do
             pcall(function()
-                for i,v in pairs(game:GetService("Players"):GetPlayers()) do
-                    if i == 12 then
-                        plyserv:SetDesc("Players :".." "..i.." ".."/".." ".."12".." ".."(Max)")
-                    elseif i == 1 then
-                        plyserv:SetDesc("Player :".." "..i.." ".."/".." ".."12")
-                    else
-                        plyserv:SetDesc("Players :".." "..i.." ".."/".." ".."12")
-                    end
-                end
+                ObservationRange:SetDesc("Observation Range Level : "..math.floor(game:GetService("Players").LocalPlayer.VisionRadius.Value))
             end)
         end
     end)
-    
-    Playerslist = {}
-    
-    for i,v in pairs(game:GetService("Players"):GetChildren()) do
-        table.insert(Playerslist,v.Name)
-    end
 
 
   local locallv = Tabs.Ok:AddParagraph({
