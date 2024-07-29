@@ -12,8 +12,8 @@ getgenv().Title = "New script used | THV V14"
 getgenv().ThumbnailUrl = "https://cdn.discordapp.com/attachments/1210549370806734868/1237401294315061253/Screenshot_2024-05-02-20-18-05-91_572064f74bd5f9fa804b05334aa4f912.jpg?ex=663b8342&is=663a31c2&hm=7e6448298b28ea190a570964c31c08219df9a6182475670a4f559de54238bab0&"
 getgenv().Color = 0x000000 
 
-getgenv().FieldTitle = "11"
-getgenv().FieldText = "122"
+getgenv().FieldTitle = "11111"
+getgenv().FieldText = "12211"
 
 getgenv().FooterText = "DaryGT Script Log"
 getgenv().FooterUrl = "https://cdn.discordapp.com/attachments/1210549370806734868/1237401294315061253/Screenshot_2024-05-02-20-18-05-91_572064f74bd5f9fa804b05334aa4f912.jpg?ex=663b8342&is=663a31c2&hm=7e6448298b28ea190a570964c31c08219df9a6182475670a4f559de54238bab0&"
@@ -6818,95 +6818,7 @@ Tabs.Shop:AddButton({
     end)
 
 
-  local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Kill Dough King", Default = false })
 
-    Toggle:OnChanged(function(Value)
-        _G.Autodoughking = Value
-		StopTween(_G.Autodoughking)
-    end)
-    
-    spawn(function()
-        while wait() do
-            if  _G.Autodoughking and World3 then
-                spawn(function()
-                    if game:GetService("Workspace").Enemies:FindFirstChild("Dough King") then
-                        for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-                            if v.Name == "Dough King" then
-                                if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
-                                    repeat task.wait()
-                                        AutoHaki()
-                                        EquipWeapon(_G.SelectWeapon)
-                                        v.HumanoidRootPart.CanCollide = false
-                                        v.Humanoid.WalkSpeed = 0
-                                        v.HumanoidRootPart.Size = Vector3.new(50,50,50)
-                                        topos(v.HumanoidRootPart.CFrame * CFrame.new(PosX,PosY,PosZ))
-                                        sethiddenproperty(game.Players.LocalPlayer,"SimulationRadius",math.huge)
-                                    until not  _G.Autodoughking or not v.Parent or v.Humanoid.Health <= 0
-                                end
-                            end
-                        end
-                    else
-                    topos(CFrame.new(-2662.818603515625, 1062.3480224609375, -11853.6953125))
-                        if game:GetService("ReplicatedStorage"):FindFirstChild("Dough King") then
-                            topos(game:GetService("ReplicatedStorage"):FindFirstChild("Dough King").HumanoidRootPart.CFrame * CFrame.new(2,20,2))
-                        else
-                            if  _G.AutodoughkingHop then
-                                Hop()
-                            end
-                        end
-                    end
-                end)
-            end
-        end
-    end)
-
-
-
-local Toggle = Tabs.Race:AddToggle("MyToggle", {Title = "Kill Player When Trial Complete [Spam Skill]", Default = false })
-
-    Toggle:OnChanged(function(Value)
-        KillPlayerSpam = Value
-        StopTween(KillPlayerSpam)
-    end)
-
-spawn(function()
-    while wait() do 
-        pcall(function()
-            if KillPlayerSpam then
-                repeat wait()
-                    targettrial()
-                    if _G.TargTrial ~= nil and _G.TargTrial.Character.Humanoid.Health < 0 then
-                        _G.TargTrial = nil
-                        targettrial()
-                    end
-                    if _G.TargTrial ~= nil then
-                        topos(_G.TargTrial.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,5))
-                        AutoHaki()
-                        EquipWeapon(_G.SelectWeapon)
-                        Click()
-                    end
-                    wait(2)
-                    if _G.SpamSkillZ then
-                        game:GetService("VirtualInputManager"):SendKeyEvent(true,122,false,game.Players.LocalPlayer.Character.HumanoidRootPart)
-                        game:GetService("VirtualInputManager"):SendKeyEvent(false,122,false,game.Players.LocalPlayer.Character.HumanoidRootPart)
-                    end
-                    wait(.2)
-                    if _G.SpamSkillX then
-                        game:GetService("VirtualInputManager"):SendKeyEvent(true,120,false,game.Players.LocalPlayer.Character.HumanoidRootPart)
-                        game:GetService("VirtualInputManager"):SendKeyEvent(false,120,false,game.Players.LocalPlayer.Character.HumanoidRootPart)
-                    end
-                    wait(.2)
-                    if _G.SpamSkillC then
-                        game:GetService("VirtualInputManager"):SendKeyEvent(true,99,false,game.Players.LocalPlayer.Character.HumanoidRootPart)
-                        game:GetService("VirtualInputManager"):SendKeyEvent(false,99,false,game.Players.LocalPlayer.Character.HumanoidRootPart)
-                        wait(.2)
-                        game:GetService("VirtualInputManager"):SendKeyEvent(false,"C",false,game.Players.LocalPlayer.Character.HumanoidRootPart)
-                    end
-                until not KillPlayerSpam or not v.Parent or v.Humanoid.Health <= 0 
-            end
-        end)
-    end
-end)
 
 
 Tabs.Main:AddButton({
@@ -7299,7 +7211,95 @@ end
   end
 })
 
+  local Toggle = Tabs.Main:AddToggle("MyToggle", {Title = "Kill Dough King", Default = false })
 
+    Toggle:OnChanged(function(Value)
+        _G.Autodoughking = Value
+		StopTween(_G.Autodoughking)
+    end)
+    
+    spawn(function()
+        while wait() do
+            if  _G.Autodoughking and World3 then
+                spawn(function()
+                    if game:GetService("Workspace").Enemies:FindFirstChild("Dough King") then
+                        for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+                            if v.Name == "Dough King" then
+                                if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
+                                    repeat task.wait()
+                                        AutoHaki()
+                                        EquipWeapon(_G.SelectWeapon)
+                                        v.HumanoidRootPart.CanCollide = false
+                                        v.Humanoid.WalkSpeed = 0
+                                        v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+                                        topos(v.HumanoidRootPart.CFrame * CFrame.new(PosX,PosY,PosZ))
+                                        sethiddenproperty(game.Players.LocalPlayer,"SimulationRadius",math.huge)
+                                    until not  _G.Autodoughking or not v.Parent or v.Humanoid.Health <= 0
+                                end
+                            end
+                        end
+                    else
+                    topos(CFrame.new(-2662.818603515625, 1062.3480224609375, -11853.6953125))
+                        if game:GetService("ReplicatedStorage"):FindFirstChild("Dough King") then
+                            topos(game:GetService("ReplicatedStorage"):FindFirstChild("Dough King").HumanoidRootPart.CFrame * CFrame.new(2,20,2))
+                        else
+                            if  _G.AutodoughkingHop then
+                                Hop()
+                            end
+                        end
+                    end
+                end)
+            end
+        end
+    end)
+
+
+
+local Toggle = Tabs.Race:AddToggle("MyToggle", {Title = "Kill Player When Trial Complete [Spam Skill]", Default = false })
+
+    Toggle:OnChanged(function(Value)
+        KillPlayerSpam = Value
+        StopTween(KillPlayerSpam)
+    end)
+
+spawn(function()
+    while wait() do 
+        pcall(function()
+            if KillPlayerSpam then
+                repeat wait()
+                    targettrial()
+                    if _G.TargTrial ~= nil and _G.TargTrial.Character.Humanoid.Health < 0 then
+                        _G.TargTrial = nil
+                        targettrial()
+                    end
+                    if _G.TargTrial ~= nil then
+                        topos(_G.TargTrial.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,5))
+                        AutoHaki()
+                        EquipWeapon(_G.SelectWeapon)
+                        Click()
+                    end
+                    wait(2)
+                    if _G.SpamSkillZ then
+                        game:GetService("VirtualInputManager"):SendKeyEvent(true,122,false,game.Players.LocalPlayer.Character.HumanoidRootPart)
+                        game:GetService("VirtualInputManager"):SendKeyEvent(false,122,false,game.Players.LocalPlayer.Character.HumanoidRootPart)
+                    end
+                    wait(.2)
+                    if _G.SpamSkillX then
+                        game:GetService("VirtualInputManager"):SendKeyEvent(true,120,false,game.Players.LocalPlayer.Character.HumanoidRootPart)
+                        game:GetService("VirtualInputManager"):SendKeyEvent(false,120,false,game.Players.LocalPlayer.Character.HumanoidRootPart)
+                    end
+                    wait(.2)
+                    if _G.SpamSkillC then
+                        game:GetService("VirtualInputManager"):SendKeyEvent(true,99,false,game.Players.LocalPlayer.Character.HumanoidRootPart)
+                        game:GetService("VirtualInputManager"):SendKeyEvent(false,99,false,game.Players.LocalPlayer.Character.HumanoidRootPart)
+                        wait(.2)
+                        game:GetService("VirtualInputManager"):SendKeyEvent(false,"C",false,game.Players.LocalPlayer.Character.HumanoidRootPart)
+                    end
+                until not KillPlayerSpam or not v.Parent or v.Humanoid.Health <= 0 
+            end
+        end)
+    end
+end)
 
 
 
