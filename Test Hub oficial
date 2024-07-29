@@ -6484,6 +6484,21 @@ end)
 end) 
 
 
+  local locallv = Tabs.Ok:AddParagraph({
+        Title = "Your Lv",
+        Content = ""
+    })
+    
+  spawn(function()
+        while wait() do
+            pcall(function()
+                locallv:Set("Level :".." "..game:GetService("Players").LocalPlayer.Data.Level.Value)
+            end)
+        end
+    end) 
+
+
+
     
     local Timekl = Tabs.Main:AddParagraph({
         Title = "Time Sever",
