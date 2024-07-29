@@ -6767,7 +6767,7 @@ Tabs.Misc:AddButton({
 	Title = "Auto Cake Farm",
 	Description = "",
 	Callback = function()
-		 spawn(function()
+	spawn(function()
         while wait() do
             pcall(function()
                 if string.len(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CakePrinceSpawner")) == 88 then
@@ -6874,8 +6874,7 @@ Tabs.Misc:AddButton({
                 end)
             end
         end
-	end
-})
+    })
 
 
 
