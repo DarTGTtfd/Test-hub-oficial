@@ -12,8 +12,8 @@ getgenv().Title = "New script used | THV V14"
 getgenv().ThumbnailUrl = "https://cdn.discordapp.com/attachments/1210549370806734868/1237401294315061253/Screenshot_2024-05-02-20-18-05-91_572064f74bd5f9fa804b05334aa4f912.jpg?ex=663b8342&is=663a31c2&hm=7e6448298b28ea190a570964c31c08219df9a6182475670a4f559de54238bab0&"
 getgenv().Color = 0x000000 
 
-getgenv().FieldTitle = "Script"
-getgenv().FieldText = "Test Hub v14"
+getgenv().FieldTitle = "11"
+getgenv().FieldText = "122"
 
 getgenv().FooterText = "DaryGT Script Log"
 getgenv().FooterUrl = "https://cdn.discordapp.com/attachments/1210549370806734868/1237401294315061253/Screenshot_2024-05-02-20-18-05-91_572064f74bd5f9fa804b05334aa4f912.jpg?ex=663b8342&is=663a31c2&hm=7e6448298b28ea190a570964c31c08219df9a6182475670a4f559de54238bab0&"
@@ -6860,32 +6860,7 @@ Tabs.Shop:AddButton({
         end
     end)
 
-   local Time = Tabs.Ok:AddParagraph({
-        Title = "Time Zone",
-        Content = ""
-    })
-    
-    local function UpdateOS()
-        local date = os.date("*t")
-        local hour = (date.hour) % 24
-        local ampm = hour < 12 and "AM" or "PM"
-        local timezone = string.format("%02i:%02i:%02i %s", ((hour -1) % 12) + 1, date.min, date.sec, ampm)
-        local datetime = string.format("%02d/%02d/%04d", date.day, date.month, date.year)
-        local LocalizationService = game:GetService("LocalizationService")
-        local Players = game:GetService("Players")
-        local player = Players.LocalPlayer
-        local name = player.Name
-        local result, code = pcall(function()
-            return LocalizationService:GetCountryRegionForPlayerAsync(player)
-        end)
-        Time:SetDesc(datetime.." - "..timezone.." [ " .. code .. " ]")
-    end
-    spawn(function()
-        while true do
-            UpdateOS()
-            game:GetService("RunService").RenderStepped:Wait()
-        end
-    end)
+
 
 local Toggle = Tabs.Race:AddToggle("MyToggle", {Title = "Kill Player When Trial Complete [Spam Skill]", Default = false })
 
