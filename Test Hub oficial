@@ -6345,7 +6345,7 @@ Tabs.Ok:AddButton({
 	Title = "Auto Rid Pirate", 
 	Description = "",
 	Callback = function()
-          spawn(function()
+        spawn(function()
     while wait() do
         if _G.RaidPirate then
             pcall(function()
@@ -6378,10 +6378,10 @@ Tabs.Ok:AddButton({
             end)
         end
     end
-
-	
-    end
+end
 })
+	
+ 
 
 
 
