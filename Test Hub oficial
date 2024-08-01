@@ -6020,7 +6020,13 @@ Tabs.Shop:AddButton({
 	end
 })
 
-
+Tabs.Shop:AddButton({
+	Title = "Electric Claw",
+	Description = "",
+	Callback = function()
+		game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyElectricClaw")
+	end
+})
 
 
 Tabs.Shop:AddButton({
