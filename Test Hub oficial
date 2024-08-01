@@ -6722,7 +6722,7 @@ Tabs.Shop:AddButton({
       end    
 })
 
-Tabs.Shop:AddButton({
+Tabs.Ok:AddButton({
         Title = "Music Script with id", 
 	Description = "By me",
 	Callback = function()
