@@ -7296,7 +7296,6 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/CasperFlyModz/discord
             Title = "Auto turn On Buso Haki",
             Description = "Click",
             Callback = function()
-            spawn(function()
     while wait(.1) do
         if _G.AUTOHAKI then 
             if not game.Players.LocalPlayer.Character:FindFirstChild("HasBuso") then
