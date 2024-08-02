@@ -6511,19 +6511,6 @@ local localbountyhornor = Tabs.Ok:AddParagraph({
         end
     end)
 
-local bones = Tabs.Ok:AddParagraph({
-       Title = "Bones Check",
-       Content = ""
-    })
-
-   spawn(function()
-    while wait() do
-        pcall(function()
-            BoneCheck:SetDesc("Total Bone : "..(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Bones","Check")))
-        end)
-    end
-end)
-
 
     
     local Timekl = Tabs.Main:AddParagraph({
@@ -7303,6 +7290,25 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/CasperFlyModz/discord
  end
 })
 
+
+
+            Tabs.Ok:AddButton({
+            Title = "Auto turn On Buso Haki",
+            Description = "Click",
+            Callback = function()
+            spawn(function()
+    while wait(.1) do
+        if _G.AUTOHAKI then 
+            if not game.Players.LocalPlayer.Character:FindFirstChild("HasBuso") then
+                local args = {
+                    [1] = "Buso"
+                }
+                game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+            end
+        end
+    end
+ end
+})
 
 
 
