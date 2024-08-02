@@ -7245,14 +7245,16 @@ end
 
 
 
-    local ToggleAutorace = Tabs.Main:AddToggle("ToggleAutorace", {Title = "Fe", Default = false })
-    ToggleAutorace:OnChanged(function(Value)
-    Options.ToggleAutorace:SetValue(false)
-    spawn(function()
-     loadstring(game:HttpGet("https://rentry.co/n55gmtpi/raw", true))()
-        end
-    end)
-
+            Tabs.Ok:AddButton({
+            Title = "Coppy Server Job Id",
+            Description = "Click",
+            Callback = function()
+             AutoActiveRace = bm
+            if bm == false then
+                CancelTween()
+            end
+         end
+    })
 
 
 
