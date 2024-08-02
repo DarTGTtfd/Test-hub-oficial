@@ -7244,15 +7244,7 @@ end
     })
 
 
-            Tabs.Ok:AddButton({
-            Title = "Copy Discord Link",
-            Description = "Click",
-            Callback = function()
-            setclipboard(https://discord.com/invite/tEYvq9m3GT)
-            Notify("Script Status", "Copied!", 10)
-           end
-    })
-
+    
 
             Tabs.Ok:AddButton({
             Title = "Fps Bost2",
