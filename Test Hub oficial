@@ -7328,7 +7328,7 @@ local ToggleCastleRaid = Tabs.Main:AddToggle("ToggleCastleRaid", {
         end
         end)
 
-local StatusBone = Tabs.Ok:AddParagraph({
+    local StatusBone = Tabs.Ok:AddParagraph({
     Title = "Bone Status",
     Content = ""
 })
@@ -7340,27 +7340,6 @@ local StatusBone = Tabs.Ok:AddParagraph({
 		end)
 	end)
 
-if Third_Sea then
-local Mob_Kill_Cake_Prince = Tabs.Main:AddParagraph({
-    Title = "Check Katakuri Spam",
-    Content = ""
-})
-
-spawn(function()
-	while wait() do
-		pcall(function()
-			if string.len(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CakePrinceSpawner")) == 88 then
-				Mob_Kill_Cake_Prince:SetDesc("Kill : "..string.sub(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CakePrinceSpawner"),39,41).."")
-			elseif string.len(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CakePrinceSpawner")) == 87 then
-				Mob_Kill_Cake_Prince:SetDesc("Kill : "..string.sub(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CakePrinceSpawner"),39,40).."")
-			elseif string.len(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CakePrinceSpawner")) == 86 then
-				Mob_Kill_Cake_Prince:SetDesc("Kill : "..string.sub(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CakePrinceSpawner"),39,39).." ")
-			else
-				Mob_Kill_Cake_Prince:SetDesc("Cake Prince : [YES]")
-			end
-		end)
-	end
-end)
 
 
 
