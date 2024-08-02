@@ -7340,7 +7340,6 @@ local StatusBone = Tabs.Ok:AddParagraph({
 	end)
 
 if Third_Sea then
-local MiscFarm = Tabs.Main:AddSection("Katakuri Farm")
 local Mob_Kill_Cake_Prince = Tabs.Main:AddParagraph({
     Title = "Check Katakuri Spam",
     Content = ""
