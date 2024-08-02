@@ -6511,7 +6511,7 @@ local localbountyhornor = Tabs.Ok:AddParagraph({
         end
     end)
 
-local localbones = Tabs.Ok:AddParagraph({
+local bones = Tabs.Ok:AddParagraph({
        Title = "Bones Check",
        Content = ""
     })
