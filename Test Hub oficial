@@ -6307,8 +6307,8 @@ Tabs.Race:AddButton({
 })
 
  Tabs.Ok:AddButton({
-            Title = "Coppy Server Job Id",
-            Description = "Click",
+            Title = "Coppy Server Discord Link",
+            Description = "Click(Join To see more updates)",
             Callback = function()
             setclipboard("https://discord.com/invite/tEYvq9m3GT")
             Notify("Script Status", "Copied Discord Lin!", 10)
@@ -7282,6 +7282,15 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/CasperFlyModz/discord
          end
     })
 
+
+
+            Tabs.Ok:AddButton({
+            Title = "Spawn Cake Prince",
+            Description = "Click",
+            Callback = function()
+    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("CakePrinceSpawner",value)
+ end
+})
 
 
 
