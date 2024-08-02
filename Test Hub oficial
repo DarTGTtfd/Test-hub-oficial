@@ -7400,3 +7400,59 @@ game:GetService("ReplicatedStorage"):WaitForChild("Modules"):WaitForChild("Net")
 		end)
 	end)
 	
+local ToggleNocliprock = Tabs.Main:AddToggle("ToggleNocliprock", {
+    Title = "Auto No Clip Rock",
+    Description = "", 
+    Default = false })
+ToggleNocliprock:OnChanged(function(Value)
+    _G.Nocliprock = Value
+end)
+Options.ToggleNocliprock:SetValue(false)
+spawn(function()
+	while wait() do
+		if _G.Nocliprock then
+			if game.Players.LocalPlayer.Character.Humanoid.Sit == true then
+				for _, v in pairs(game.Workspace.Boats:GetDescendants()) do
+					if v:IsA("BasePart") and v.CanCollide == true then
+						v.CanCollide = false
+					end
+				end
+				for _, v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+					if v:IsA("BasePart") and v.CanCollide == true then
+						v.CanCollide = false
+					end
+				end
+			elseif game.Players.LocalPlayer.Character.Humanoid.Sit == false then
+				for _, v in pairs(game.Workspace.Boats:GetDescendants()) do
+					if v:IsA("BasePart") and v.CanCollide == false then
+						v.CanCollide = true
+					end
+				end
+				for _, v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+					if v:IsA("BasePart") and v.CanCollide == false then
+						v.CanCollide = true
+					end
+				end
+			end
+		end
+	end
+end)
+
+	
+	local SetSpeedBoatSlider = Tabs.Main:AddSlider("SliderSpeedBoat", {
+	Title = "Set Speed (boat)",
+	Description = "",
+	Default = 300,
+	Min = 0,
+	Max = 1000,
+	Rounding = 1,
+	Callback = function(value)
+		SetSpeedBoat = value
+	end
+})
+
+SetSpeedBoatSlider:OnChanged(function(value)
+	SetSpeedBoat = value
+end)
+
+SetSpeedBoatSlider:SetValue(300)
