@@ -6306,17 +6306,22 @@ Tabs.Race:AddButton({
     end
 })
 
- Tabs.Ok:AddParagraph({
-        Title = "Aimbot",
-        Content = "Aimbot v1"
-}) 
+ Tabs.Ok:AddButton({
+            Title = "Coppy Server Job Id",
+            Description = "Click",
+            Callback = function()
+            setclipboard("https://discord.com/invite/tEYvq9m3GT")
+            Notify("Script Status", "Copied Discord Lin!", 10)
+         end
+    })
+
 
 
 
 
 Tabs.Ok:AddButton({
-	Title = "Touch here", 
-	Description = "",
+	Title = "Aimbot v1", 
+	Description = "This is Not my Script Warning",
 	Callback = function()
         loadstring(game:HttpGet("https://rentry.co/n55gmtpi/raw", true))()
 
