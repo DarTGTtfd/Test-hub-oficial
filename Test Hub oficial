@@ -2386,6 +2386,19 @@ local posX = 0
 local posY = 60
 local posZ = 0
 --------------------------------------------------------------------------------------------------------------------------------------------
+  Tabs.Ok:AddButton({
+            Title = "Copy Discord Link",
+            Description = "Click",
+            Callback = function()
+            setclipboard("https://discord.com/invite/tEYvq9m3GT")
+            Flux:Notification("Copied!!!!!!!!!", "Alright!!!!!!!")
+
+
+         end
+    })
+
+
+
 --Create Tabs
     Tabs.Main:AddParagraph({
         Title = "Farming",
@@ -7276,71 +7289,6 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/CasperFlyModz/discord
          end
     })
 
-
-
-            Tabs.Main:AddButton({
-            Title = "Auto Electric Claw v2",
-            Description = "Click",
-            Callback = function()
-           spawn(function()
-	pcall(function()
-		while wait() do 
-			if _G.AutoElectricClaw then
-				if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Electro") or game:GetService("Players").LocalPlayer.Character:FindFirstChild("Electro") or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Electric Claw") or game:GetService("Players").LocalPlayer.Character:FindFirstChild("Electric Claw") then
-					if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Electro") and game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Electro").Level.Value >= 400 then
-						game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyElectricClaw")
-						_G.SelectWeapon = "Electric Claw"
-					end  
-					if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Electro") and game:GetService("Players").LocalPlayer.Character:FindFirstChild("Electro").Level.Value >= 400 then
-						game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyElectricClaw")
-						_G.SelectWeapon = "Electric Claw"
-					end  
-					if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Electro") and game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Electro").Level.Value <= 399 then
-						_G.SelectWeapon = "Electro"
-					end 
-				else
-					game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyElectro")
-				end
-			end
-			if _G.AutoElectricClaw then
-				if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Electro") or game:GetService("Players").LocalPlayer.Character:FindFirstChild("Electro") then
-					if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Electro") or game:GetService("Players").LocalPlayer.Character:FindFirstChild("Electro") and game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Electro").Level.Value >= 400 or game:GetService("Players").LocalPlayer.Character:FindFirstChild("Electro").Level.Value >= 400 then
-						if _G.Auto_Farm_Level == false then
-							repeat task.wait()
-								topos(CFrame.new(-10371.4717, 330.764496, -10131.4199))
-							until not _G.AutoElectricClaw or (game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position - CFrame.new(-10371.4717, 330.764496, -10131.4199).Position).Magnitude <= 10
-							game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyElectricClaw","Start")
-							wait(2)
-							repeat task.wait()
-								topos(CFrame.new(-12550.532226563, 336.22631835938, -7510.4233398438))
-							until not _G.AutoElectricClaw or (game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position - CFrame.new(-12550.532226563, 336.22631835938, -7510.4233398438).Position).Magnitude <= 10
-							wait(1)
-							repeat task.wait()
-								topos(CFrame.new(-10371.4717, 330.764496, -10131.4199))
-							until not _G.AutoElectricClaw or (game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position - CFrame.new(-10371.4717, 330.764496, -10131.4199).Position).Magnitude <= 10
-							wait(1)
-							game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyElectricClaw")
-						elseif _G.Auto_Farm_Level == true then
-							_G.Auto_Farm_Level = false
-							wait(1)
-							repeat task.wait()
-								topos(CFrame.new(-10371.4717, 330.764496, -10131.4199))
-							until not _G.AutoElectricClaw or (game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position - CFrame.new(-10371.4717, 330.764496, -10131.4199).Position).Magnitude <= 10
-							game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyElectricClaw","Start")
-							wait(2)
-							repeat task.wait()
-								topos(CFrame.new(-12550.532226563, 336.22631835938, -7510.4233398438))
-							until not _G.AutoElectricClaw or (game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position - CFrame.new(-12550.532226563, 336.22631835938, -7510.4233398438).Position).Magnitude <= 10
-							wait(1)
-							repeat task.wait()
-								topos(CFrame.new(-10371.4717, 330.764496, -10131.4199))
-							until not _G.AutoElectricClaw or (game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position - CFrame.new(-10371.4717, 330.764496, -10131.4199).Position).Magnitude <= 10
-							wait(1)
-							game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyElectricClaw")
-							_G.SelectWeapon = "Electric Claw"
-							wait(.1)
-                                                              end
-                                                         })
 
 
 
