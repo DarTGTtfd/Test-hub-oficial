@@ -7715,16 +7715,7 @@ Tabs.Visual:AddInput("Input_Level", {
     end
 })
 
-Tabs.Visual:AddInput("Input_EXP", {
-    Title = "EXP",
-    Default = "",
-    Placeholder = "input",
-    Numeric = false, 
-    Finished = false,
-    Callback = function(value)
-        game:GetService("Players")["LocalPlayer"].Data.Exp.Value = tonumber(value)
-    end
-})
+
 
 Tabs.Visual:AddInput("Input_Beli", {
     Title = "Beli",
