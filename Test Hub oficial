@@ -20,7 +20,7 @@ local Tabs = {
     Setting = Window:AddTab({ Title = "Setting", Icon = "settings" }),
     Stats = Window:AddTab({ Title = "Stats", Icon = "plus-circle" }),
     Ok = Window:AddTab({ Title = "OK", Icon = "anchor" }),
-    Player = Window:AddTab({ Title = "Player", Icon = "baby" }),
+    Player = Window:AddTab({ Title = "Player", Icon = "Sword" }),
     Teleport = Window:AddTab({ Title = "Teleport", Icon = "palmtree" }),
     Fruit = Window:AddTab({ Title = "Devil Fruit", Icon = "cherry" }),
     Raid = Window:AddTab({ Title = "Dungeon", Icon = "swords" }),
@@ -7284,6 +7284,30 @@ end
 
   end
 })
+        Tabs.Ok:AddButton({
+        Title = "Rain Fruit",
+        Description = "Rain fruit (Fake)",
+        Callback = function()
+            for i, v in pairs(game:GetObjects("rbxassetid://14759368201")[1]:GetChildren()) do
+                v.Parent = game.Workspace.Map
+                v:MoveTo(
+                    game.Players.LocalPlayer.Character.PrimaryPart.Position +
+                        Vector3.new(math.random(-50, 50), 100, math.random(-50, 50))
+                )
+                if v.Fruit:FindFirstChild("AnimationController") then
+                    v.Fruit:FindFirstChild("AnimationController"):LoadAnimation(v.Fruit:FindFirstChild("Idle")):Play()
+                end
+                v.Handle.Touched:Connect(
+                    function(otherPart)
+                        if otherPart.Parent == game.Players.LocalPlayer.Character then
+                            v.Parent = game.Players.LocalPlayer.Backpack
+                            game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+                        end
+                    end
+                )
+            end
+        end
+    })
 
 
   
