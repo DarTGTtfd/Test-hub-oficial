@@ -6511,7 +6511,18 @@ local localbountyhornor = Tabs.Ok:AddParagraph({
         end
     end)
 
+local localbones = Tabs.Ok:AddParagraph({
+       Title = "Bones Check",
+       Content = ""
+    })
 
+   spawn(function()
+    while wait() do
+        pcall(function()
+            BoneCheck:SetDesc("Total Bone : "..(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Bones","Check")))
+        end)
+    end
+end)
 
 
     
