@@ -20,6 +20,7 @@ local Tabs = {
     Setting = Window:AddTab({ Title = "Setting", Icon = "settings" }),
     Stats = Window:AddTab({ Title = "Stats", Icon = "plus-circle" }),
     Ok = Window:AddTab({ Title = "OK", Icon = "anchor" }),
+    KitSune = Window:AddTab({ Title = "KitSune island", Icon = "fox" }),
     Player = Window:AddTab({ Title = "Player", Icon = "Sword" }),
     Teleport = Window:AddTab({ Title = "Teleport", Icon = "palmtree" }),
     Fruit = Window:AddTab({ Title = "Devil Fruit", Icon = "cherry" }),
