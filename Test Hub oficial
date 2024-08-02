@@ -7248,7 +7248,7 @@ end
             Title = "Copy Discord Link",
             Description = "Click",
             Callback = function()
-            setclipboard("https://discord.com/invite/tEYvq9m3GT")
+            setclipboard(https://discord.com/invite/tEYvq9m3GT)
             Notify("Script Status", "Copied!", 10)
            end
     })
