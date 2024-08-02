@@ -7310,4 +7310,13 @@ end
     })
 
 
-  
+            Tabs.Ok:AddButton({
+            Title = "Coppy Server Job Id",
+            Description = "Click",
+            Callback = function()
+            setclipboard(game.JobId)
+            Notify("Script Status", "Copied Job Id!", 10)
+         end
+    })
+
+
