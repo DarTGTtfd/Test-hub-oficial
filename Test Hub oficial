@@ -7285,11 +7285,6 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/CasperFlyModz/discord
 
         
 
-
-
-
-
-
 local ToggleCastleRaid = Tabs.Main:AddToggle("ToggleCastleRaid", {
         Title = "Auto Pirates Castle Raid",
         Description = "", 
@@ -7328,17 +7323,7 @@ local ToggleCastleRaid = Tabs.Main:AddToggle("ToggleCastleRaid", {
         end
         end)
 
-    local StatusBone = Tabs.Ok:AddParagraph({
-    Title = "Bone Status",
-    Content = ""
-})
-	spawn(function()
-		pcall(function()
-			while wait() do
-				StatusBone:SetDesc("You Have : "..tostring(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Bones","Check").." Bones"))
-			end
-		end)
-	end)
+
 
 
 
