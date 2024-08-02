@@ -7294,13 +7294,9 @@ Tabs.Ok:AddButton({
         Title = "Auto Turn Colors Indra", 
 	Description = "",
 	Callback = function()
-        Open_Color_Haki = value
-	StopTween(Open_Color_Haki)
-end)
-spawn(function()
-    while wait(.3) do
+        spawn(function()
+        while wait(.3) do
         pcall(function()
-            if Open_Color_Haki then
                 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("activateColor","Winter Sky")
             	wait(0.5)
             	repeat ATween(CFrame.new(-5420.16602, 1084.9657, -2666.8208)) wait() 
