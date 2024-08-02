@@ -6298,10 +6298,8 @@ Tabs.Misc:AddButton({
             Description = "Click",
             Callback = function()
             setclipboard("https://discord.com/invite/tEYvq9m3GT")
-            Flux:Notification("Copied!!!!!!!!!", "Alright!!!!!!!")
-
-
-         end
+            Notify("Script Status", "Copied!", 10)
+           end
     })
 
 
