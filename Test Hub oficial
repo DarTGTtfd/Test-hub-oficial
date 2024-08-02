@@ -2386,18 +2386,6 @@ local posX = 0
 local posY = 60
 local posZ = 0
 --------------------------------------------------------------------------------------------------------------------------------------------
-  Tabs.Ok:AddButton({
-            Title = "Copy Discord Link",
-            Description = "Click",
-            Callback = function()
-            setclipboard("https://discord.com/invite/tEYvq9m3GT")
-            Flux:Notification("Copied!!!!!!!!!", "Alright!!!!!!!")
-
-
-         end
-    })
-
-
 
 --Create Tabs
     Tabs.Main:AddParagraph({
@@ -6304,13 +6292,22 @@ Tabs.Misc:AddButton({
 		game.Players.localPlayer.PlayerGui.Main.Titles.Visible = true
 	end
 })
-    Tabs.Ok:AddParagraph({
-        Title = "Mirage",
-        Content = "TP mirage"
+
+  Tabs.Ok:AddButton({
+            Title = "Copy Discord Link",
+            Description = "Click",
+            Callback = function()
+            setclipboard("https://discord.com/invite/tEYvq9m3GT")
+            Flux:Notification("Copied!!!!!!!!!", "Alright!!!!!!!")
+
+
+         end
     })
 
 
-Tabs.Ok:AddButton({
+
+
+Tabs.Race:AddButton({
 	Title = "Teleport to Mirage", 
 	Description = "",
 	Callback = function()
