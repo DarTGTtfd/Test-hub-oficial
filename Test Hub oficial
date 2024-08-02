@@ -20,8 +20,8 @@ local Tabs = {
     Setting = Window:AddTab({ Title = "Setting", Icon = "settings" }),
     Stats = Window:AddTab({ Title = "Stats", Icon = "plus-circle" }),
     Ok = Window:AddTab({ Title = "OK", Icon = "anchor" }),
-    KitSune = Window:AddTab({ Title = "KitSune island", Icon = "fox" }),
-    Player = Window:AddTab({ Title = "Player", Icon = "Sword" }),
+    KitSune = Window:AddTab({ Title = "KitSune island", Icon = "lamp" }),
+    Player = Window:AddTab({ Title = "Player", Icon = "dog" }),
     Teleport = Window:AddTab({ Title = "Teleport", Icon = "palmtree" }),
     Fruit = Window:AddTab({ Title = "Devil Fruit", Icon = "cherry" }),
     Raid = Window:AddTab({ Title = "Dungeon", Icon = "swords" }),
@@ -7336,23 +7336,8 @@ Tabs.KitSune:AddButton({
 game:GetService("ReplicatedStorage"):WaitForChild("Modules"):WaitForChild("Net"):WaitForChild("RF/KitsuneStatuePray"):InvokeServer()
  end
     })
-
-local ToggleCollectAzure = Tabs.KitSune:AddToggle("ToggleCollectAzure", 
-        Title = "ToggleCollectAzure",
-        Description = "", 
-        Default = false })
-        
-spawn(function()
-    while wait() do
-        if _G.CollectAzure then
-            pcall(function()
-                if game:GetService("Workspace"):FindFirstChild("AttachedAzureEmber") then
-                    Tween(game:GetService("Workspace"):WaitForChild("EmberTemplate"):FindFirstChild("Part").CFrame)
-					print("Azure")
-                end
-            end)
-        end
-    end
-end)
-end
-
+ 
+ Tabs.Kitsune:AddParagraph({
+        Title = "More comming Soon",
+        Content = "Sory."
+    })
