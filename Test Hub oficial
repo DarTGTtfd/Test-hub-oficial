@@ -7341,10 +7341,7 @@ local ToggleCollectAzure = Tabs.KitSune:AddToggle("ToggleCollectAzure",
         Title = "ToggleCollectAzure",
         Description = "", 
         Default = false })
-        ToggleCollectAzure:OnChanged(function(Value)
-         _G.CollectAzure = Value
-      end)
-      Options.ToggleCollectAzure:SetValue(false)
+        
 spawn(function()
     while wait() do
         if _G.CollectAzure then
