@@ -7246,7 +7246,7 @@ end
 
 
             Tabs.Ok:AddButton({
-            Title = "Fps Bosst",
+            Title = "Fps Bost2",
             Description = "!This Script Is not mine!",
             Callback = function()
             _G.Settings = {
@@ -7278,5 +7278,37 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/CasperFlyModz/discord
 
 
 
+            Tabs.Main:AddButton({
+            Title = "Auto Pole (v1)",
+            Description = "Click",
+            Callback = function()
+            (LocalPlayerLevelValue >= 150 and CheckBoss("Thunder God [Lv. 575] [Boss]"))
+             then
+                if LocalPlayerLevelValue >= 150 then
+                    if CheckItem("Pole (1st Form)") then
+                        pcall(
+                            function()
+                                AutoPoleV1_Toggle:Set(false)
+                            end
+                        )
+                    end
+                    if CheckBoss("Thunder God [Lv. 575] [Boss]") then
+                        Target = CheckBoss("Thunder God [Lv. 575] [Boss]")
+                        if game.Workspace.Enemies:FindFirstChild(Target.Name) then
+                            repeat
+                                EquipWeapon()
+                                EnableBuso()
+                                Tweento(Target.HumanoidRootPart.CFrame * CFrame.new(0, 40, 0))
+                                UseFastAttack = true
+                            until not Target or not Target:FindFirstChild("Humanoid") or
+                                not Target:FindFirstChild("HumanoidRootPart") and Target.Humanoid.Health <= 0
+                            UseFastAttack = false
+                        elseif Target then
+                            spawn(Tweento(Target.HumanoidRootPart.CFrame * CFrame.new(0, 40, 0)), 1)
+                            NoClip = true
+                        end
+
+         end
+    })
 
 
