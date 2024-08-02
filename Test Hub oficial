@@ -7568,3 +7568,36 @@ spawn(function()
             end)
         end
     end)
+
+local ToggleAutoT = Tabs.Ok:AddToggle("ToggleAutoT", {Title = "Auto Turn On V3", Description = "", Default = false })
+ToggleAutoT:OnChanged(function(Value)
+    _G.AutoT = Value
+    end)
+ Options.ToggleAutoT:SetValue(false)
+ spawn(function()
+    while wait() do
+        pcall(function()
+            if _G.AutoT then
+                game:GetService("ReplicatedStorage").Remotes.CommE:FireServer("ActivateAbility")
+            end
+        end)
+    end
+    end)
+
+
+local ToggleAutoY = Tabs.Ok:AddToggle("ToggleAutoY", {Title = "Auto Turn On V4", Description = "", Default = false })
+ToggleAutoY:OnChanged(function(Value)
+    _G.AutoY = Value
+    end)
+ Options.ToggleAutoY:SetValue(false)
+ spawn(function()
+    while wait() do
+        pcall(function()
+            if _G.AutoY then
+                game:GetService("VirtualInputManager"):SendKeyEvent(true,"Y",false,game)
+				wait(0.1)
+                game:GetService("VirtualInputManager"):SendKeyEvent(false,"Y",false,game)
+            end
+        end)
+    end
+    end)
