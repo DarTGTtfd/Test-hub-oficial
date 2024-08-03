@@ -3,7 +3,7 @@ local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/d
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 --------------------------------------------------------------------------------------------------------------------------------------------
 local Window = Fluent:CreateWindow({
-    Title = "999",
+    Title = "11",
     SubTitle = "By AKAR",
     TabWidth = 160,
     Size = UDim2.fromOffset(450, 300),
@@ -6352,7 +6352,7 @@ end)
 		end
 	end)
     
-    local Kitsune = Tabs.KitSune:AddParagraph({
+    local Kitsune = Tabs.Ok:AddParagraph({
         Title = "KITSUNE Island",
         Content = ""
     })
@@ -6630,8 +6630,6 @@ Tabs.Shop:AddButton({
         game.ReplicatedStorage.Remotes.CommF_:InvokeServer("ThunderGodTalk")
       end    
 })
-
-
 
 
 Tabs.Shop:AddButton({
