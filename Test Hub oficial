@@ -6235,6 +6235,396 @@ Tabs.Misc:AddButton({
 
     
 --------------------------------------------------------------------------------------------------------------------------------------------
+        
+ local Kitsune = Tabs.KitSune:AddParagraph({
+        Title = "KITSUNE Island",
+        Content = ""
+    })
+    
+    spawn(function()
+        pcall(function()
+            while wait() do
+    if game:GetService("Workspace").Map:FindFirstChild("KitsuneIsland") then
+    Kitsune:SetDesc('✅')
+    else
+      Kitsune:SetDesc('❌' )
+            end
+               end
+        end)
+end)
+
+
+
+
+
+    local FrozenIsland = Tabs.Ok:AddParagraph({
+        Title = "Frozen Dimension",
+        Content = ""
+    })
+    
+    spawn(function()
+    pcall(function()
+        while wait() do
+            if game.Workspace._WorldOrigin.Locations:FindFirstChild('Frozen Dimension') then
+                FrozenIsland:SetDesc('✅')
+            else
+                FrozenIsland:SetDesc('❌')
+            end
+        end
+    end)
+end) 
+
+
+ local ObservationRange = Tabs.Ok:AddParagraph({
+       Title = "Haki Exp",
+        Content = ""
+    })
+    
+    spawn(function()
+        while wait() do
+            pcall(function()
+                ObservationRange:SetDesc("Observation Range Level : "..math.floor(game:GetService("Players").LocalPlayer.VisionRadius.Value))
+            end)
+        end
+    end)
+
+
+  local locallv = Tabs.Ok:AddParagraph({
+        Title = "Level",
+        Content = ""
+    })
+                                   
+  spawn(function()
+        while wait() do
+            pcall(function()
+                locallv:SetDesc("Level :".." "..game:GetService("Players").LocalPlayer.Data.Level.Value)
+            end)
+        end
+    end) 
+
+local localbountyhornor = Tabs.Ok:AddParagraph({
+       Title = "Bounty / Honor",
+        Content = ""
+    })
+
+    spawn(function()
+        while wait() do
+            pcall(function()
+                localbountyhornor:SetDesc("Bounty / Honor :".." "..game:GetService("Players").LocalPlayer.leaderstats["Bounty/Honor"].Value)
+            end)
+        end
+    end)
+
+
+    
+    local Timekl = Tabs.Main:AddParagraph({
+        Title = "Time Sever",
+        Content = ""
+    })
+    
+    function UpdateTime()
+local GameTime = math.floor(workspace.DistributedGameTime+0.5)
+local Hour = math.floor(GameTime/(60^2))%24
+local Minute = math.floor(GameTime/(60^1))%60
+local Second = math.floor(GameTime/(60^0))%60
+Timekl:SetDesc("[Time Sever] : Hours : "..Hour.. "  Minutes : "..Minute.."  Seconds : "..Second)
+end
+
+spawn(function()
+ while task.wait() do
+ pcall(function()
+  UpdateTime()
+  end)
+ end
+ end)
+
+Tabs.Ok:AddButton({
+	Title = "Go Pirate", 
+	Description = "",
+	Callback = function()
+        local args = {
+    [1] = "SetTeam",
+    [2] = "Pirates"
+  }
+  game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+  local args = {
+    [1] = "BartiloQuestProgress"
+  }
+  game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+
+ end
+})
+
+
+Tabs.Ok:AddButton({
+	Title = "Go Marine", 
+	Description = "",
+	Callback = function()
+        local args = {
+    [1] = "SetTeam",
+    [2] = "Marines"
+  }
+  game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+  local args = {
+    [1] = "BartiloQuestProgress"
+  }
+  game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+	
+ end
+})
+
+Tabs.Shop:AddButton({
+        Title = "Buy Ghoul Race", 
+	Description = "",
+	Callback = function()
+        local a = {
+            [1] = "Ectoplasm",
+            [2] = "BuyCheck",
+            [3] = 4
+        }
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(a))
+        local a = {
+            [1] = "Ectoplasm",
+            [2] = "Change",
+            [3] = 4
+        }
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(a))
+      end    
+})
+
+Tabs.Shop:AddButton({
+        Title = "Buy Cybork race", 
+	Description = "",
+	Callback = function()
+        local a = {
+            [1] = "CyborgTrainer",
+            [2] = "Buy"
+        }
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(a))
+      end    
+})
+
+
+Tabs.Shop:AddButton({
+        Title = "Kutlass Katana", 
+	Description = "",
+	Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Cutlass")
+      end    
+})
+
+Tabs.Shop:AddButton({
+        Title = "Katana", 
+	Description = "",
+	Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Katana")
+      end    
+})
+
+Tabs.Shop:AddButton({
+        Title = "Iron Mcae", 
+	Description = "",
+	Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Iron Mace")
+      end    
+})
+
+Tabs.Shop:AddButton({
+        Title = "Dual Katana", 
+	Description = "",
+	Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Duel Katana")
+      end    
+})
+
+Tabs.Shop:AddButton({
+        Title = "Triple katana", 
+	Description = "",
+	Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Triple Katana")
+      end    
+})
+
+Tabs.Shop:AddButton({
+        Title = "Pipe", 
+	Description = "",
+	Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Pipe")
+      end    
+})
+
+Tabs.Ok:AddButton({
+        Title = "Music Script with id", 
+	Description = "By me",
+	Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/DarTGTtfd/music-ui/main/music%20ui"))()
+      end    
+})
+
+Tabs.Shop:AddButton({
+        Title = "Dual Head Debate", 
+	Description = "",
+	Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Dual-Headed Blade")
+      end    
+})
+
+Tabs.Shop:AddButton({
+        Title = "Basiento", 
+	Description = "",
+	Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Bisento")
+      end    
+})
+
+Tabs.Shop:AddButton({
+        Title = "Soul Cane", 
+	Description = "",
+	Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Soul Cane")
+      end    
+})
+
+Tabs.Shop:AddButton({
+        Title = "Pole v.2 [ 5,000 Fragments ]", 
+	Description = "",
+	Callback = function()
+        game.ReplicatedStorage.Remotes.CommF_:InvokeServer("ThunderGodTalk")
+      end    
+})
+
+
+Tabs.Shop:AddButton({
+        Title = "Slinghsot", 
+	Description = "",
+	Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Slingshot")
+      end    
+})
+
+Tabs.Shop:AddButton({
+        Title = "Muscket", 
+	Description = "",
+	Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Musket")
+      end    
+})
+
+Tabs.Shop:AddButton({
+        Title = "Pole v.2 [ 5,000 Fragments ]", 
+	Description = "",
+	Callback = function()
+        game.ReplicatedStorage.Remotes.CommF_:InvokeServer("ThunderGodTalk")
+      end    
+})
+
+
+
+Tabs.Ok:AddButton({
+        Title = "W Azure Bounty", 
+	Description = "Made By Azure Credits",
+	Callback = function()
+getgenv().SpamSkill = false
+getgenv().AutoUseRaceV3 = true
+getgenv().AutoUseRacev4 = true
+getgenv().SpamSkillOnRaceV4 = true
+getgenv().Invisible = true
+getgenv().InCombatNoReset = false
+getgenv().Team = "Pirates" -- Marines
+getgenv().TweenSpeed = 300 -- 350 max or Get Tp Back
+ getgenv().Setting = { -- Select Weapon, Self Explain
+        ["Melee"] = {["Enable"] = true,["Delay"] = 3,
+          ["Skills"] = {
+            ["Z"] = {["Enable"] = true,["HoldTime"] = 0,["TimeToNextSkill"] = 0,},
+            [ "X"] = {["Enable"] = true,["HoldTime"] = 0, ["TimeToNextSkill"] = 0,},
+            ["C"] = {["Enable"] = true,["HoldTime"] = 0, ["TimeToNextSkill"] = 0,},
+            },
+        },
+        ["Blox Fruit"] = {["Enable"] = true, ["Delay"] = 2,
+            ["Skills"] = {
+                ["Z"] = {["Enable"] = true, ["HoldTime"] = 1.5, ["TimeToNextSkill"] = 0,},
+                ["X"] = { ["Enable"] = true, ["HoldTime"] = 0, ["TimeToNextSkill"] = 0,},
+                ["C"] = { ["Enable"] = true, ["HoldTime"] = 0,["TimeToNextSkill"] = 0, },
+                ["V"] = { ["Enable"] = true, ["HoldTime"] = 0,["TimeToNextSkill"] = 0,},
+                ["F"] = {["Enable"] = true,["HoldTime"] = 0, ["TimeToNextSkill"] = 0,},
+            },
+        },
+        ["Sword"] = { ["Enable"] = false, ["Delay"] = 2,
+            ["Skills"] = {
+                ["Z"] = {["Enable"] = true,  ["HoldTime"] = 0.5,["TimeToNextSkill"] = 0,},
+                ["X"] = {["Enable"] = true, ["HoldTime"] = 0.5, ["TimeToNextSkill"] = 0,},
+            },
+        },
+        ["Gun"] = {["Enable"] = false, ["Delay"] = 2,
+            ["Skills"] = {
+                ["Z"] = {["Enable"] = true,["HoldTime"] = 0.5,["TimeToNextSkill"] = 0,},
+                ["X"] = {["Enable"] = true,["HoldTime"] = 0.5,["TimeToNextSkill"] = 0,
+                },
+            },
+        }
+    }
+loadstring(game:HttpGet('https://raw.githubusercontent.com/vinhuchi/temp-repos/main/FreeAutoBounty.lua'))()
+     end
+ })
+
+
+Tabs.Shop:AddButton({
+        Title = "Refined Slingshot", 
+	Description = "",
+	Callback = function()
+          game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Refined Flintlock")
+      end    
+})
+
+Tabs.Shop:AddButton({
+        Title = "Refined Flintlock", 
+	Description = "",
+	Callback = function()
+        local args = {
+            [1] = "BuyItem",
+            [2] = "Refined Flintlock"
+        }
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+      end    
+})
+
+Tabs.Shop:AddButton({
+        Title = "Cannon", 
+	Description = "",
+	Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Cannon")
+      end    
+})
+
+Tabs.Shop:AddButton({
+        Title = "Kabucha [ 1,500 Fragments]", 
+	Description = "",
+	Callback = function()
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward","Slingshot","1")
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward","Slingshot","2")
+      end    
+})
+
+Tabs.Shop:AddButton({
+        Title = "Bizarre Rifle [ 250 Ectoplasm ]", 
+	Description = "",
+	Callback = function()
+        local A_1 = "Ectoplasm"
+        local A_2 = "Buy"
+        local A_3 = 1
+        local Event = game:GetService("ReplicatedStorage").Remotes["CommF_"]
+        Event:InvokeServer(A_1, A_2, A_3) 
+        local A_1 = "Ectoplasm"
+        local A_2 = "Buy"
+        local A_3 = 1
+        local Event = game:GetService("ReplicatedStorage").Remotes["CommF_"]
+        Event:InvokeServer(A_1, A_2, A_3)
+      end    
+})
+         
+
+
+
             Tabs.Ok:AddButton({
             Title = "Fps Bost2",
             Description = "!This Script Is not mine!",
@@ -6730,388 +7120,4 @@ end)
 		end
 	end)
     
-    local Kitsune = Tabs.KitSune:AddParagraph({
-        Title = "KITSUNE Island",
-        Content = ""
-    })
     
-    spawn(function()
-        pcall(function()
-            while wait() do
-    if game:GetService("Workspace").Map:FindFirstChild("KitsuneIsland") then
-    Kitsune:SetDesc('✅')
-    else
-      Kitsune:SetDesc('❌' )
-            end
-               end
-        end)
-end)
-
-
-
-
-
-    local FrozenIsland = Tabs.Ok:AddParagraph({
-        Title = "Frozen Dimension",
-        Content = ""
-    })
-    
-    spawn(function()
-    pcall(function()
-        while wait() do
-            if game.Workspace._WorldOrigin.Locations:FindFirstChild('Frozen Dimension') then
-                FrozenIsland:SetDesc('✅')
-            else
-                FrozenIsland:SetDesc('❌')
-            end
-        end
-    end)
-end) 
-
-
- local ObservationRange = Tabs.Ok:AddParagraph({
-       Title = "Haki Exp",
-        Content = ""
-    })
-    
-    spawn(function()
-        while wait() do
-            pcall(function()
-                ObservationRange:SetDesc("Observation Range Level : "..math.floor(game:GetService("Players").LocalPlayer.VisionRadius.Value))
-            end)
-        end
-    end)
-
-
-  local locallv = Tabs.Ok:AddParagraph({
-        Title = "Level",
-        Content = ""
-    })
-                                   
-  spawn(function()
-        while wait() do
-            pcall(function()
-                locallv:SetDesc("Level :".." "..game:GetService("Players").LocalPlayer.Data.Level.Value)
-            end)
-        end
-    end) 
-
-local localbountyhornor = Tabs.Ok:AddParagraph({
-       Title = "Bounty / Honor",
-        Content = ""
-    })
-
-    spawn(function()
-        while wait() do
-            pcall(function()
-                localbountyhornor:SetDesc("Bounty / Honor :".." "..game:GetService("Players").LocalPlayer.leaderstats["Bounty/Honor"].Value)
-            end)
-        end
-    end)
-
-
-    
-    local Timekl = Tabs.Main:AddParagraph({
-        Title = "Time Sever",
-        Content = ""
-    })
-    
-    function UpdateTime()
-local GameTime = math.floor(workspace.DistributedGameTime+0.5)
-local Hour = math.floor(GameTime/(60^2))%24
-local Minute = math.floor(GameTime/(60^1))%60
-local Second = math.floor(GameTime/(60^0))%60
-Timekl:SetDesc("[Time Sever] : Hours : "..Hour.. "  Minutes : "..Minute.."  Seconds : "..Second)
-end
-
-spawn(function()
- while task.wait() do
- pcall(function()
-  UpdateTime()
-  end)
- end
- end)
-
-Tabs.Ok:AddButton({
-	Title = "Go Pirate", 
-	Description = "",
-	Callback = function()
-        local args = {
-    [1] = "SetTeam",
-    [2] = "Pirates"
-  }
-  game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-  local args = {
-    [1] = "BartiloQuestProgress"
-  }
-  game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-
- end
-})
-
-
-Tabs.Ok:AddButton({
-	Title = "Go Marine", 
-	Description = "",
-	Callback = function()
-        local args = {
-    [1] = "SetTeam",
-    [2] = "Marines"
-  }
-  game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-  local args = {
-    [1] = "BartiloQuestProgress"
-  }
-  game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-	
- end
-})
-
-Tabs.Shop:AddButton({
-        Title = "Buy Ghoul Race", 
-	Description = "",
-	Callback = function()
-        local a = {
-            [1] = "Ectoplasm",
-            [2] = "BuyCheck",
-            [3] = 4
-        }
-        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(a))
-        local a = {
-            [1] = "Ectoplasm",
-            [2] = "Change",
-            [3] = 4
-        }
-        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(a))
-      end    
-})
-
-Tabs.Shop:AddButton({
-        Title = "Buy Cybork race", 
-	Description = "",
-	Callback = function()
-        local a = {
-            [1] = "CyborgTrainer",
-            [2] = "Buy"
-        }
-        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(a))
-      end    
-})
-
-
-Tabs.Shop:AddButton({
-        Title = "Kutlass Katana", 
-	Description = "",
-	Callback = function()
-        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Cutlass")
-      end    
-})
-
-Tabs.Shop:AddButton({
-        Title = "Katana", 
-	Description = "",
-	Callback = function()
-        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Katana")
-      end    
-})
-
-Tabs.Shop:AddButton({
-        Title = "Iron Mcae", 
-	Description = "",
-	Callback = function()
-        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Iron Mace")
-      end    
-})
-
-Tabs.Shop:AddButton({
-        Title = "Dual Katana", 
-	Description = "",
-	Callback = function()
-        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Duel Katana")
-      end    
-})
-
-Tabs.Shop:AddButton({
-        Title = "Triple katana", 
-	Description = "",
-	Callback = function()
-        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Triple Katana")
-      end    
-})
-
-Tabs.Shop:AddButton({
-        Title = "Pipe", 
-	Description = "",
-	Callback = function()
-        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Pipe")
-      end    
-})
-
-Tabs.Ok:AddButton({
-        Title = "Music Script with id", 
-	Description = "By me",
-	Callback = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/DarTGTtfd/music-ui/main/music%20ui"))()
-      end    
-})
-
-Tabs.Shop:AddButton({
-        Title = "Dual Head Debate", 
-	Description = "",
-	Callback = function()
-        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Dual-Headed Blade")
-      end    
-})
-
-Tabs.Shop:AddButton({
-        Title = "Basiento", 
-	Description = "",
-	Callback = function()
-        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Bisento")
-      end    
-})
-
-Tabs.Shop:AddButton({
-        Title = "Soul Cane", 
-	Description = "",
-	Callback = function()
-        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Soul Cane")
-      end    
-})
-
-Tabs.Shop:AddButton({
-        Title = "Pole v.2 [ 5,000 Fragments ]", 
-	Description = "",
-	Callback = function()
-        game.ReplicatedStorage.Remotes.CommF_:InvokeServer("ThunderGodTalk")
-      end    
-})
-
-
-Tabs.Shop:AddButton({
-        Title = "Slinghsot", 
-	Description = "",
-	Callback = function()
-        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Slingshot")
-      end    
-})
-
-Tabs.Shop:AddButton({
-        Title = "Muscket", 
-	Description = "",
-	Callback = function()
-        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Musket")
-      end    
-})
-
-Tabs.Shop:AddButton({
-        Title = "Pole v.2 [ 5,000 Fragments ]", 
-	Description = "",
-	Callback = function()
-        game.ReplicatedStorage.Remotes.CommF_:InvokeServer("ThunderGodTalk")
-      end    
-})
-
-
-
-Tabs.Ok:AddButton({
-        Title = "W Azure Bounty", 
-	Description = "Made By Azure Credits",
-	Callback = function()
-getgenv().SpamSkill = false
-getgenv().AutoUseRaceV3 = true
-getgenv().AutoUseRacev4 = true
-getgenv().SpamSkillOnRaceV4 = true
-getgenv().Invisible = true
-getgenv().InCombatNoReset = false
-getgenv().Team = "Pirates" -- Marines
-getgenv().TweenSpeed = 300 -- 350 max or Get Tp Back
- getgenv().Setting = { -- Select Weapon, Self Explain
-        ["Melee"] = {["Enable"] = true,["Delay"] = 3,
-          ["Skills"] = {
-            ["Z"] = {["Enable"] = true,["HoldTime"] = 0,["TimeToNextSkill"] = 0,},
-            [ "X"] = {["Enable"] = true,["HoldTime"] = 0, ["TimeToNextSkill"] = 0,},
-            ["C"] = {["Enable"] = true,["HoldTime"] = 0, ["TimeToNextSkill"] = 0,},
-            },
-        },
-        ["Blox Fruit"] = {["Enable"] = true, ["Delay"] = 2,
-            ["Skills"] = {
-                ["Z"] = {["Enable"] = true, ["HoldTime"] = 1.5, ["TimeToNextSkill"] = 0,},
-                ["X"] = { ["Enable"] = true, ["HoldTime"] = 0, ["TimeToNextSkill"] = 0,},
-                ["C"] = { ["Enable"] = true, ["HoldTime"] = 0,["TimeToNextSkill"] = 0, },
-                ["V"] = { ["Enable"] = true, ["HoldTime"] = 0,["TimeToNextSkill"] = 0,},
-                ["F"] = {["Enable"] = true,["HoldTime"] = 0, ["TimeToNextSkill"] = 0,},
-            },
-        },
-        ["Sword"] = { ["Enable"] = false, ["Delay"] = 2,
-            ["Skills"] = {
-                ["Z"] = {["Enable"] = true,  ["HoldTime"] = 0.5,["TimeToNextSkill"] = 0,},
-                ["X"] = {["Enable"] = true, ["HoldTime"] = 0.5, ["TimeToNextSkill"] = 0,},
-            },
-        },
-        ["Gun"] = {["Enable"] = false, ["Delay"] = 2,
-            ["Skills"] = {
-                ["Z"] = {["Enable"] = true,["HoldTime"] = 0.5,["TimeToNextSkill"] = 0,},
-                ["X"] = {["Enable"] = true,["HoldTime"] = 0.5,["TimeToNextSkill"] = 0,
-                },
-            },
-        }
-    }
-loadstring(game:HttpGet('https://raw.githubusercontent.com/vinhuchi/temp-repos/main/FreeAutoBounty.lua'))()
-     end
- })
-
-
-Tabs.Shop:AddButton({
-        Title = "Refined Slingshot", 
-	Description = "",
-	Callback = function()
-          game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Refined Flintlock")
-      end    
-})
-
-Tabs.Shop:AddButton({
-        Title = "Refined Flintlock", 
-	Description = "",
-	Callback = function()
-        local args = {
-            [1] = "BuyItem",
-            [2] = "Refined Flintlock"
-        }
-        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
-      end    
-})
-
-Tabs.Shop:AddButton({
-        Title = "Cannon", 
-	Description = "",
-	Callback = function()
-        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Cannon")
-      end    
-})
-
-Tabs.Shop:AddButton({
-        Title = "Kabucha [ 1,500 Fragments]", 
-	Description = "",
-	Callback = function()
-        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward","Slingshot","1")
-        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BlackbeardReward","Slingshot","2")
-      end    
-})
-
-Tabs.Shop:AddButton({
-        Title = "Bizarre Rifle [ 250 Ectoplasm ]", 
-	Description = "",
-	Callback = function()
-        local A_1 = "Ectoplasm"
-        local A_2 = "Buy"
-        local A_3 = 1
-        local Event = game:GetService("ReplicatedStorage").Remotes["CommF_"]
-        Event:InvokeServer(A_1, A_2, A_3) 
-        local A_1 = "Ectoplasm"
-        local A_2 = "Buy"
-        local A_3 = 1
-        local Event = game:GetService("ReplicatedStorage").Remotes["CommF_"]
-        Event:InvokeServer(A_1, A_2, A_3)
-      end    
-})
