@@ -6222,7 +6222,7 @@ Tabs.Misc:AddButton({
 
 
 
- Tabs.Ok:AddButton({
+ Tabs.SubFarming:AddButton({
             Title = "Coppy Server Discord Link",
             Description = "Click(Join To see more updates)",
             Callback = function()
@@ -6235,7 +6235,7 @@ Tabs.Misc:AddButton({
 
 
 
-Tabs.Ok:AddButton({
+Tabs.SubFarming:AddButton({
 	Title = "Aimbot v1", 
 	Description = "This is Not my Script Warning",
 	Callback = function()
@@ -6245,7 +6245,7 @@ Tabs.Ok:AddButton({
     end
 })
 
- Tabs.Ok:AddButton({
+ Tabs.SubFarming:AddButton({
             Title = "Fps Bost2",
             Description = "!This Script Is not mine!",
             Callback = function()
@@ -6276,7 +6276,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/CasperFlyModz/discord
          end
     })
 
-Tabs.Ok:AddButton({
+Tabs.SubFarming:AddButton({
         Title = "W Azure Bounty", 
 	Description = "Made By Azure Credits",
 	Callback = function()
@@ -6323,7 +6323,7 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/vinhuchi/temp-repos/m
      end
  })
 
-   local Input = Tabs.Ok:AddInput("Input", {
+   local Input = Tabs.SubFarming:AddInput("Input", {
         Title = "Job Id",
         Default = "",
         Placeholder = "Paste Job Id",
@@ -6334,7 +6334,7 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/vinhuchi/temp-repos/m
         end
     })
     
-    Tabs.Ok:AddButton({
+    Tabs.SubFarming:AddButton({
         Title = "Copy Job ID",
         Description = "",
         Callback = function()
@@ -6342,7 +6342,7 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/vinhuchi/temp-repos/m
         end
     })
     
-    Tabs.Ok:AddButton({
+    Tabs.SubFarming:AddButton({
         Title = "Join Job ID",
         Description = "",
         Callback = function()
@@ -6350,7 +6350,7 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/vinhuchi/temp-repos/m
         end
     })
     
-    local Toggle = Tabs.Ok:AddToggle("MyToggle", {Title = "Spam Join Job Id", Default = false })
+    local Toggle = Tabs.SubFarming:AddToggle("MyToggle", {Title = "Spam Join Job Id", Default = false })
     Toggle:OnChanged(function(Value)
   _G.Join = Value
 		end)
@@ -6363,7 +6363,7 @@ end
 end
 end)
 
-   local FM = Tabs.Ok:AddParagraph({
+   local FM = Tabs.SubFarming:AddParagraph({
         Title = "Moon Status",
         Content = "Go sea 3"
     })
@@ -6388,7 +6388,7 @@ end)
             end
     end)
 
-  local MobKilled = Tabs.Ok:AddParagraph({
+  local MobKilled = Tabs.SubFarming:AddParagraph({
         Title = "Dough Boss Status",
         Content = ""
     })
@@ -6410,7 +6410,7 @@ end)
         end
     end)
     
-    local Elite_Hunter_Status = Tabs.Ok:AddParagraph({
+    local Elite_Hunter_Status = Tabs.SubFarming:AddParagraph({
         Title = "Elite Status",
         Content = ""
     })
@@ -6428,7 +6428,7 @@ end)
 		end
 	end)
     
-    local Kitsune = Tabs.Ok:AddParagraph({
+    local Kitsune = Tabs.SubFarming:AddParagraph({
         Title = "KITSUNE Island",
         Content = ""
     })
@@ -6446,7 +6446,7 @@ end)
 end)
 
 
-    local FrozenIsland = Tabs.Ok:AddParagraph({
+    local FrozenIsland = Tabs.SubFarming:AddParagraph({
         Title = "Frozen Dimension",
         Content = ""
     })
@@ -6464,7 +6464,7 @@ end)
 end) 
 
 
- local ObservationRange = Tabs.Ok:AddParagraph({
+ local ObservationRange = Tabs.SubFarming:AddParagraph({
        Title = "Haki Exp",
         Content = ""
     })
@@ -6478,7 +6478,7 @@ end)
     end)
 
 
-  local locallv = Tabs.Ok:AddParagraph({
+  local locallv = Tabs.SubFarming:AddParagraph({
         Title = "Level",
         Content = ""
     })
@@ -6491,7 +6491,7 @@ end)
         end
     end) 
 
-local localbountyhornor = Tabs.Ok:AddParagraph({
+local localbountyhornor = Tabs.SubFarming:AddParagraph({
        Title = "Bounty / Honor",
         Content = ""
     })
@@ -6527,7 +6527,7 @@ spawn(function()
  end
  end)
 
-Tabs.Ok:AddButton({
+Tabs.SubFarming:AddButton({
 	Title = "Go Pirate", 
 	Description = "",
 	Callback = function()
@@ -6545,7 +6545,7 @@ Tabs.Ok:AddButton({
 })
 
 
-Tabs.Ok:AddButton({
+Tabs.SubFarming:AddButton({
 	Title = "Go Marine", 
 	Description = "",
 	Callback = function()
@@ -6642,7 +6642,7 @@ Tabs.Shop:AddButton({
       end    
 })
 
-Tabs.Ok:AddButton({
+Tabs.SubFarming:AddButton({
         Title = "Music Script with id", 
 	Description = "By me",
 	Callback = function()
@@ -6650,7 +6650,7 @@ Tabs.Ok:AddButton({
       end    
 })
 
-local ToggleEnablePvp = Tabs.Ok:AddToggle("ToggleEnablePvp", {Title = "Auto Enable PVP", Description = "",Default = false })
+local ToggleEnablePvp = Tabs.SubFarming:AddToggle("ToggleEnablePvp", {Title = "Auto Enable PVP", Description = "",Default = false })
 ToggleEnablePvp:OnChanged(function(Value)
   _G.EnabledPvP = Value
 end)
@@ -7452,7 +7452,7 @@ spawn(function()
         end
     end)
 
-local ToggleAutoT = Tabs.Ok:AddToggle("ToggleAutoT", {Title = "Auto Turn On V3", Description = "", Default = false })
+local ToggleAutoT = Tabs.SubFarming:AddToggle("ToggleAutoT", {Title = "Auto Turn On V3", Description = "", Default = false })
 ToggleAutoT:OnChanged(function(Value)
     _G.AutoT = Value
     end)
@@ -7468,7 +7468,7 @@ ToggleAutoT:OnChanged(function(Value)
     end)
 
 
-local ToggleAutoY = Tabs.Ok:AddToggle("ToggleAutoY", {Title = "Auto Turn On V4", Description = "", Default = false })
+local ToggleAutoY = Tabs.SubFarming:AddToggle("ToggleAutoY", {Title = "Auto Turn On V4", Description = "", Default = false })
 ToggleAutoY:OnChanged(function(Value)
     _G.AutoY = Value
     end)
