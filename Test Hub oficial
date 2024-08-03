@@ -7517,5 +7517,24 @@ spawn(function()
     end
 end)
 
+ local ToggleMirageIsland = Tabs.Race:AddToggle("ToggleMirageIsland", {Title = "Server Hop Mirage Island",Description = "", Default = false })
+ToggleMirageIsland:OnChanged(function(Value)
+    _G.FindMirageIsland = Value
+end)
+Options.ToggleMirageIsland:SetValue(false)
 
+spawn(function()
+    while wait() do
+    if _G.FindMirageIsland then
+        if game:GetService("Workspace").Map:FindFirstChild("MysticIsland") or game:GetService("Workspace").Map:FindFirstChild("MysticIsland") then
+            if HighestPointRealCFrame and (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - HighestPointRealCFrame.Position).Magnitude > 10 then
+            Tween(getHighestPoint().CFrame * CFrame.new(0, 211.88, 0))
+                end
+        elseif not game:GetService("Workspace").Map:FindFirstChild("MysticIsland") or not game:GetService("Workspace").Map:FindFirstChild("MysticIsland") then
+            Hop()
+            end
+        end
+    end
+end)
+end
 
