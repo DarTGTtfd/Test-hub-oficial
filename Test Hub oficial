@@ -6650,6 +6650,55 @@ Tabs.Ok:AddButton({
       end    
 })
 
+local ToggleEnablePvp = Tabs.Ok:AddToggle("ToggleEnablePvp", {Title = "Auto Enable PVP", Description = "",Default = false })
+ToggleEnablePvp:OnChanged(function(Value)
+  _G.EnabledPvP = Value
+end)
+Options.ToggleEnablePvp:SetValue(false)
+
+spawn(function()
+  pcall(function()
+      while wait() do
+          if _G.EnabledPvP then
+              if game:GetService("Players").LocalPlayer.PlayerGui.Main.PvpDisabled.Visible == true then
+                  game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("EnablePvp")
+              end
+          end
+      end
+  end)
+end)
+
+
+  local ToggleCollectAzure = Tabs.Main:AddToggle("ToggleCollectAzure", {Title = "Collect Azure Ambers",Description = "", Default = false })
+      ToggleCollectAzure:OnChanged(function(Value)
+         _G.CollectAzure = Value
+      end)
+      Options.ToggleCollectAzure:SetValue(false)
+spawn(function()
+    while wait() do
+        if _G.CollectAzure then
+            pcall(function()
+                if game:GetService("Workspace"):FindFirstChild("AttachedAzureEmber") then
+                    Tween(game:GetService("Workspace"):WaitForChild("EmberTemplate"):FindFirstChild("Part").CFrame)
+					print("Azure")
+                end
+            end)
+        end
+    end
+end)
+end
+
+Tabs.Main:AddButton({
+        Title = "Trade Azure",
+        Description = "",
+        Callback = function()            
+game:GetService("ReplicatedStorage"):WaitForChild("Modules"):WaitForChild("Net"):WaitForChild("RF/KitsuneStatuePray"):InvokeServer()
+ end
+    })
+
+
+
+
 Tabs.Shop:AddButton({
         Title = "Dual Head Debate", 
 	Description = "",
@@ -7456,52 +7505,6 @@ ToggleAutoY:OnChanged(function(Value)
     end
     end)
 
-
-local ToggleEnablePvp = Tabs.Ok:AddToggle("ToggleEnablePvp", {Title = "Auto Enable PVP", Description = "",Default = false })
-ToggleEnablePvp:OnChanged(function(Value)
-  _G.EnabledPvP = Value
-end)
-Options.ToggleEnablePvp:SetValue(false)
-
-spawn(function()
-  pcall(function()
-      while wait() do
-          if _G.EnabledPvP then
-              if game:GetService("Players").LocalPlayer.PlayerGui.Main.PvpDisabled.Visible == true then
-                  game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("EnablePvp")
-              end
-          end
-      end
-  end)
-end)
-
-
-  local ToggleCollectAzure = Tabs.Main:AddToggle("ToggleCollectAzure", {Title = "Collect Azure Ambers",Description = "", Default = false })
-      ToggleCollectAzure:OnChanged(function(Value)
-         _G.CollectAzure = Value
-      end)
-      Options.ToggleCollectAzure:SetValue(false)
-spawn(function()
-    while wait() do
-        if _G.CollectAzure then
-            pcall(function()
-                if game:GetService("Workspace"):FindFirstChild("AttachedAzureEmber") then
-                    Tween(game:GetService("Workspace"):WaitForChild("EmberTemplate"):FindFirstChild("Part").CFrame)
-					print("Azure")
-                end
-            end)
-        end
-    end
-end)
-end
-
-Tabs.Main:AddButton({
-        Title = "Trade Azure",
-        Description = "",
-        Callback = function()            
-game:GetService("ReplicatedStorage"):WaitForChild("Modules"):WaitForChild("Net"):WaitForChild("RF/KitsuneStatuePray"):InvokeServer()
- end
-    })
 
 
         
