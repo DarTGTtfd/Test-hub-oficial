@@ -7485,23 +7485,31 @@ ToggleAutoY:OnChanged(function(Value)
     end
     end)
 
-  local ToggleCollectAzure = Tabs.Main:AddToggle("ToggleCollectAzure", {Title = "Collect Azure Ambers",Description = "", Default = false })
-      ToggleCollectAzure:OnChanged(function(Value)
-         _G.CollectAzure = Value
-      end)
-      Options.ToggleCollectAzure:SetValue(false)
-spawn(function()
-    while wait() do
-        if _G.CollectAzure then
-            pcall(function()
-                if game:GetService("Workspace"):FindFirstChild("AttachedAzureEmber") then
-                    Tween(game:GetService("Workspace"):WaitForChild("EmberTemplate"):FindFirstChild("Part").CFrame)
-					print("Azure")
-                end
-            end)
-        end
-    end
-end)
+ 
+local ToggleSpawnCake = Tabs.Main:AddToggle("ToggleSpawnCake", {
+        Title = "Auto spam Katakuri",
+        Description = "", 
+        Default = true })
+    ToggleSpawnCake:OnChanged(function(Value)
+      _G.SpawnCakePrince = Value
+    end)
+    Options.ToggleSpawnCake:SetValue(true)
 end
 
+spawn(function()
+  while wait() do
+    if _G.SpawnCakePrince then
+      local args = {
+        [1] = "CakePrinceSpawner",
+        [2] = true
+      }
+      game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))                    
+      local args = {
+        [1] = "CakePrinceSpawner"
+      }
+      game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+    end
+  end
+end)
+end
         
